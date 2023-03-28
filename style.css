@@ -1,0 +1,26 @@
+@charset "UTF-8"; /*記得設定charset要寫在第一行*/
+body {
+    background: url(images/bg.jpg);
+}
+
+.box {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+.btn {
+    width: 200px;
+    float: left;
+}
+.col {
+    width: 424px;
+    float: left;
+    margin: 0 20px;  
+    border: dotted 3px tomato;
+    padding: 0 15px;
+}
+
+mark {
+    background-color: rgb(164, 126, 57);
+    color: rgb(247, 245, 255);
+  }
