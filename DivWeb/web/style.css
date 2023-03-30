@@ -1,0 +1,37 @@
+@charset "UTF-8"; /*記得設定charset要寫在第一行*/
+body {
+    background: url(images/bg.jpg);
+}
+
+.box {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+   clear: both;
+}
+.btn {
+    width: 200px;
+    float: left;
+}
+.col {
+    width: 414px;
+    float: left;
+    margin: 10px 20px 30px;  
+    border: dotted 3px tomato;
+    padding: 20px;
+}
+
+mark {
+    background-color: rgb(164, 126, 57);
+    color: rgb(247, 245, 255);
+  }
+
+.textCenter{
+    text-align: center;
+  }
+  /* 讓下面文字置中 */
+
+  address{
+    font-style: normal;
+  }
+

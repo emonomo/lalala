@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyJavaScript</title>
+</head>
+<body>
+    <script>
+       /* let age = 27;
+        console.log(age.toString());
+
+        const PI = 3.14159;
+        console.log(PI.toFixed(3));
+
+        //常數(constant):不能夠變動資料的變數
+
+        let x = 100;
+           x /= 2;
+           console.log(x);
+
+//輸入視窗涵式: prompt(string, string)
+//輸入視窗涵式: prompt("提示語", "預設值")
+        let n1 =  prompt("請輸入第一個數字", "");
+        let n2 = prompt("請輸入第二個數字", "");
+        let result = parseInt(n1)  + parseInt(n2);
+        console.log(result);
+
+        let a = 123;
+        console.log(a.toString());
+
+        console.log(parseFloat("3.14"));  */
+
+        
+        //程式區塊: 用大括號{}包起來的程式碼
+        /*{
+            let name = prompt("你的名字是:");
+             alert("你好" + name);     
+        }*/
+
+{
+    //ES6 => 字串字面值樣板(新的)使用反引號包起來，變數用${變數名}方式
+    let score = 50;
+    let str1 =  `分數為 ${score} 分 --> `;
+    let str2 =  ""
+    if (score >= 60){
+        str2 = "及格";
+    }else{
+        str2 = "不及格";
+    }
+    console.log(str1 + str2);
+}
+
+/*
+let num1 = prompt("請輸入0~100的數字:");
+    num1 = Number(num1);
+
+    if(num1 > 0 && num1 < 100){
+        alert("您的數字是:"+ num1);
+    }else{
+        alert("請輸入正確數值!!!");
+        num1 = prompt("請輸入0~100的數字:");
+    }
+    */
+
+ 
+ 
+ /*
+    let a = prompt("請輸入帳號:","");
+    let n = prompt("請輸入密碼:","");
+
+    let add = "admin";
+    let pass = 1234
+
+    if (a == add && n == pass){
+        console.log("輸入正確")
+    }else if (a == "" || n == ""){
+        console.log("請確實輸入帳號/密碼")
+    }else if (a != add &&  n == pass){
+        console.log("請輸入正確帳號")
+    }else if (a == add && n != pass){
+        console.log("請輸入正確密碼")
+    }else if (a != add && n != pass){
+    alert("請輸入正確的帳號密碼")
+}
+
+*/
+    
+
+//多層條件判斷
+//電影級數判斷
+    let age = prompt("年齡:  (請輸入阿拉伯數字)");
+  if (age == null){
+     alert("按了取消");
+    }else if (age < 6 && age >= 0){
+        alert(`年齡為 ${age} 歲 --> 普遍級`);
+    }else if (age >= 6 && age < 12){
+        alert(`年齡為 ${age} 歲 --> 保護級`);
+    }else if (age >= 12 && age < 15){
+        alert(`年齡為 ${age} 歲 --> 輔12`);
+    }else if (age >= 15 && age < 18){
+        alert(`年齡為 ${age} 歲 --> 輔15`);
+    }else if(age >= 18){
+        alert(`年齡為 ${age} 歲 --> 限制級`); 
+    }else{      //以上條件皆非
+      alert(`年齡為 ${age} 歲 --> 請輸入合理數值!`)
+    }
+
+
+    </script>
+</body>
+</html>
