@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滑動效果</title>
+        <style>
+          #m1, #m2, #m3{
+            width: 500px;
+            height: 300px;
+            /* float: left; */
+          }
+
+           #m1{
+            background-color: aquamarine;
+            
+            }
+           #m2{
+            background-color: rgb(74, 162, 133);
+            
+            }
+           #m3{
+            background-color: rgb(42, 108, 86);
+            
+            }
+
+            #wrapper{
+                width: 500px; 
+                height: 1000px;   /*此高度必須是>=所有滑動區的區塊合計寬度，所以也可寫900*/
+            }
+
+            #container{
+                border: 1px solid greenyellow;
+                width: 500px;
+                height: 300px;
+                /*隱藏超出範圍內容*/
+                overflow: hidden;
+                /*溢出的範圍*/
+            }
+        </style>
+         <!-- jquery函式庫 -->
+         <script src="./jquery/js/jquery-1.11.3.min.js"></script>
+         <!-- 滑動的主程式 -->
+         <script src="./jquery/js/jquery.scrollTo.min.js"></script>
+         <script src="./jquery/js/jquery.localScroll.min.js"></script>
+
+         <script>
+            $(function(){
+                $('nav').localScroll({
+                    target:'#container' ,
+                    axis:'y' ,      /*滑動方向: x水平 ， y垂直*/
+                    duration:500 ,  /*活動速度*/
+                });
+            });
+         </script>
+</head>
+
+
+<body>
+<!-- 導覽列 -->
+  <nav>
+    <a href="#m1">Menu1</a>
+    <a href="#m2">Menu2</a>
+    <a href="#m3">Menu3</a>
+
+  </nav>
+
+<!-- 滑動區 -->
+<div id="container">
+  <div id="wrapper">
+    <section id="m1">1</section>
+    <section id="m2">2</section>
+    <section id="m3">3</section>
+  </div>
+</div>
+
+
+
+</body>
+</html>

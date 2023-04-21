@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery/jquery-3.6.4.min.js"> </script>
+</head>
+<body>
+   <h1>QA</h1>
+   <p>
+     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, quam?
+   </p>
+
+ <script>
+ //淡入淡出效果
+   $(function(){
+       //左鍵一下h1標籤時
+        $('h1').click(function(){
+           //淡出p段落內容
+          // $('p').fadeOut();
+          //自動判定是否淡入或淡出
+          $('p').fadeToggle(1200);
+        });
+
+   });
+
+
+
+    //基本語法
+    /*
+       $(document).ready(function(){
+        //撰寫程式碼的地方
+       });
+       */
+
+    //簡易語法
+    /*
+       $(function(){
+        //撰寫程式碼的地方
+       });
+       */
+
+ </script>
+</body>
+</html>

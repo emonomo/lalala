@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字輪播</title>
+
+    <!-- jquery函式庫 -->
+    <script src="./jquery/js/jquery-1.11.3.min.js"></script>  
+    <!-- 文字套件的js -->
+    <script src="./jquery/js/jquery.textslider.js"></script>
+    <!-- 文字套件的css -->
+    <link rel="stylesheet" href="./jquery/css/textslider.css">
+    
+    <!-- 自行撰寫的js -->
+    <script>
+     $(function(){
+    // $(選擇器的名稱).textslider();
+       $('.slideText').textslider({
+          //捲動的速度
+          scrollSpeed:1000,
+          //停頓的時間
+          pause:500 ,
+          //一次捲動的行數
+          scrollNum:3 ,
+          //捲動方向 (上:scrollUp   下:scrollDown)
+          direction:"scrollDown"
+        });
+     });
+
+    </script>
+
+</head>
+<body>
+    <div class="slideText">
+      <ul>
+           <li>New1</li>
+           <li>New2</li>
+           <li>New3</li>
+           <li>New4</li>
+           <li>New5</li>
+           <li>New6</li>
+           <li>New7</li>
+           <li>New8</li>
+           <li>New9</li>
+           <li>New10</li>
+      </ul>
+   </div>
+</body>
+</html>

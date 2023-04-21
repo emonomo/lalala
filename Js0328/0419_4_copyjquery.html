@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圖片輪播</title>
+
+    <style>
+        img{
+            width: 600px;
+            height: 450px;
+        }
+        header{
+            /* border: 1px solid royalblue; */
+            width: 600px;
+            height: 450px;
+            position: relative;   /*相對定位:被當作一個準點*/
+        }
+          /*導覽按鈕*/
+         #nav{
+            /* border: 1px solid rgb(220, 174, 66); */
+            right: 25px;
+            bottom: 25px;
+            position: absolute; /*絕對定位*/
+            z-index: 9999; /*調整順序，根據圖片數量增減，現在只打4會跑不出來，而上限值是9999(>0往上，<0往下)*/
+         }
+         #nav a{
+           color: #fff;
+           text-decoration:none;
+           margin-left: 20px;
+           border: 1px solid #fff;
+           display: inline-block;  /*超連結轉為區塊模式，並且水平排列 ( display: -block; 為垂直排列)*/
+           width: 30px;
+           height: 30px;
+           text-align: center;   /*文字水平對齊 :置中*/
+           line-height: 30px;    /*垂直置中: 行高值=高度值*/
+           border-radius: 50%;   /*用圓角，將正方形變成圓型*/
+           /*把數字隱藏*/
+           font-size: 0px;
+         }
+         
+         /*當導覽中的超連結被滑鼠碰到時*/
+         #nav a:hover {
+        background-color: bisque;
+        color: gray;
+         }
+         /*作用中的按鈕變色*/
+         #nav a.activeSlide{
+            background-color: burlywood;
+         }
+
+    </style>
+</head>
+
+
+<body>
+  <header>
+    <div id="imgCycle">    
+        <img src="./jquery/images/1.jpg" alt="">
+        <img src="./jquery/images/2.jpg" alt="">
+        <img src="./jquery/images/3.jpg" alt="">
+        <img src="./jquery/images/4.jpg" alt="">
+        <img src="./jquery/images/5.jpg" alt="">
+
+     </div>
+     <!-- 輪播按鈕區 -->
+    <!-- <div id="nav"></div>   ，後面有.after('<div id ="nav">')所以這裡不需要寫，擇一 -->
+  </header>
+ 
+
+    <script src="./jquery/js/jquery-3.6.4.min.js"></script>
+    <script src="./jquery/js/jquery.cycle.all.js"></script>
+
+    <script>
+       $(function(){
+        //找到輪播的區域
+      $('#imgCycle').after('<div id ="nav">').cycle({
+              fx:'zoom' ,    //輪播方式
+              timeout :800 , //輪播速度
+              pager: '#nav'  //顯示輪播按鈕的數字
+       });
+    });
+    </script>
+</body>
+</html>

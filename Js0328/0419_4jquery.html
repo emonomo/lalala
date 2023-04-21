@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圖片輪播</title>
+
+    <style>
+        img{
+            width: 600px;
+            height: 450px;
+        }
+    </style>
+</head>
+
+
+<body>
+ <div id="imgCycle">    
+    <img src="./jquery/images/1.jpg" alt="">
+    <img src="./jquery/images/2.jpg" alt="">
+    <img src="./jquery/images/3.jpg" alt="">
+    <img src="./jquery/images/4.jpg" alt="">
+    <img src="./jquery/images/5.jpg" alt="">
+</div>
+
+
+    <!-- Jquery函式庫 -->
+    <script src="./jquery/js/jquery-3.6.4.min.js"></script>
+    <!-- 輪播函式庫套件(Plugin) -->
+    <script src="./jquery/js/jquery.cycle.all.js"></script>
+    
+    <!-- 使用輪播效果 -->
+   <script>
+    $(function(){
+    //找到輪播的區域
+      $('#imgCycle').cycle({
+              fx:'zoom' ,
+              timeout :200
+       });
+    });
+   </script>
+</body>
+</html>
