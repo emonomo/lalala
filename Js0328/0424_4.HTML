@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toolTip內容</title>
+     <!-- 步驟2: 樣子 -->
+    <style>
+        a{
+            color: burlywood;
+            text-decoration: underline;
+        }
+
+        a:hover{
+            text-decoration: none;
+        }
+
+        p{
+            line-height: 1.8rem;
+            font-size: 1.2rem;
+            text-align: justify; /*左右對齊*/
+        }
+
+        .ttpShow{
+        display: none;
+        }
+
+        #ttpPanel{
+            padding: 10px; /*文字與外框保持距離*/
+            border: 1px solid #ccc;
+            width: 200px;
+            background-color: antiquewhite;
+            position: absolute; /*等下要以滑鼠的座標決定框的位置*/
+            z-index: 99;
+            display: none;
+        }
+    </style>
+    <!-- 步驟3: 設計互動效果(顯示/隱藏) -->
+     <script src="./jquery/js/jquery-1.11.3.min.js"></script>
+      <script>
+        $(function(){
+            // has():尋找指定的名稱
+            $('a:has(.ttpShow)').mouseover(function(e){
+               //滑鼠碰到超連結文字的時候
+               //1. 動態增加 ttpPanel (append)
+               //2. 顯示外框  
+               //3. 調整座標的位置(因為外框與超連結文字太近，所以可以適當調整) 
+               //children(): 尋找超連結中的ttpShow 類別
+               //html(): 取得選取器的內容
+               $('body').append('<div id="ttpPanel">'+$(this).children('.ttpShow').html()+'</div>');
+               $('#ttpPanel').css({ top:(e.pageY + 10) + 'px',left:(e.pageX + 10) + 'px'}).fadeIn('fast');
+            }).mousemove(function(e){
+                // 滑鼠移動時，改變外框座標的位置
+               $('#ttpPanel').css({ top:(e.pageY + 10) + 'px',left:(e.pageX + 10) + 'px'});    
+            }).mouseout(function(){
+               //1. 移除動態產生的 ttpPanel
+               $('#ttpPanel').remove();
+            });
+        });
+      </script>
+
+</head>
+<body>
+    <!-- 步驟1: 結構 -->
+    <P>Lorem ipsum <a href="#">dolor<span class="ttpShow">toolTip內容</span> </a> sit amet consectetur adipisicing elit. Est nus quas illo id <a href="#">consequuntur <span class="ttpShow"></span> </a> unde, qui, officiis quia error obcaecati eveniet iure voluptatum necessitatibus, modi aut illum. Et molestiae reprehenderit nihil non tempore, iusto beatae unde dolor fugiat! Velit, consequuntur.</P>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>瀑布流圖片排序</title>
+    <style>
+        #container{margin: auto;}
+        .box{width: 300px;margin: 5px ;}
+        .box img {width: 300px;vertical-align: top;}
+    </style>
+    <script src="./jquery/js/jquery-1.11.3.min.js"></script>
+    <script src="./jquery/js/imagesloaded.pkgd.min.js"></script>
+    <script src="./jquery/js/masonry.pkgd.min.js"></script>
+    <script>
+      $(function(){
+        //載入圖片
+        $('#container').imagesLoaded(function(){
+        //使用masonry排列圖片
+        $('#container').masonry({
+            isFitWidth:true  //左右平均留白
+           });
+        });
+      });
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div class = "box">
+            <img src="https://picsum.photos/id/1/200/300/" alt="">
+        </div>
+        <div class = "box">
+            <img src="https://picsum.photos/id/200/300/300" alt="">
+        </div>
+        <div class = "box">
+            <img src="https://picsum.photos/id/310/250/300" alt="">
+        </div>
+        <div class = "box">
+            <img src="https://picsum.photos/id/400/200/100" alt="">
+        </div>
+        <div class = "box">
+            <img src="https://picsum.photos/id/500/300/150" alt="">
+        </div>
+        
+
+    </div>
+</body>
+</html>

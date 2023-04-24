@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋轉木馬</title>
+
+    <script src="./jquery/js/jquery-1.11.3.min.js"></script>
+    <script src="./jquery/js/jquery.jcarousellite.min.js"></script>
+    <script>
+        $(function(){
+            $("#carousel").jCarouselLite({   //注意大小寫
+                auto:1000, //多久轉動一次
+                scroll: 3, //每次轉動的張數
+                visible:3, //每次看到的張數
+                speed:500 //圖片輪播的速度，目前是半秒
+
+            });
+        });
+    </script>
+    <style>
+        #carousel{
+            background-color: gray;
+            padding: 5px;
+        }
+
+        #carousel img{  
+            /*圖片尺寸一定要設定，否則無法執行*/
+            width: 300px;
+            height: 180px;
+            vertical-align: top;  /*取消圖片下方多餘的空白，可使用: -> 垂直對齊:靠上*/
+            margin: 5px; /*圖片與圖片間的距離*/
+        }
+    </style>
+
+</head>
+<body>
+    <!-- 旋轉木馬 -->
+     <div id="carousel">
+        <ul>
+            <!-- <li><img src="./jquery/images/1.jpg" alt="圖不見" title="我是title的內容"></li> -->
+            <li><img src="./jquery/images/1.jpg" alt="" ></li>
+            <li><img src="./jquery/images/2.jpg" alt="" ></li>
+            <li><img src="./jquery/images/3.jpg" alt="" ></li>
+            <li><img src="./jquery/images/4.jpg" alt="" ></li>
+            <li><img src="./jquery/images/5.jpg" alt="" ></li>
+        </ul>
+     </div>
+</body>
+</html>

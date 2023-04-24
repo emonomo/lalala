@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小動畫</title>
+
+<script src="./jquery/js/jquery-1.11.3.min.js"></script>
+<script>
+    //使用 animate()方法製作利動效果
+    $(function(){
+         $('.fadeBtn').hover(function() {
+            //滑鼠碰到時，背景色刷淡且放大文字
+            $('.fadeBtn').stop().animate({
+               opacity: '.5',  //透明度
+               fontSize : '3rem'
+            });
+
+         },function(){
+            //滑鼠離開時，還原色彩且與原文字大小
+            $('.fadeBtn').stop().animate({
+               opacity: '1',
+               fontSize:'1.3rem'
+            });
+         });
+    });
+</script>
+
+<style>
+   a{
+    /*移除超連結底線*/
+    text-decoration:none;
+    color: grey;
+   }
+
+   .fadeBtn{
+    display: inline-block;  /*轉換成區塊顏色*/
+    background-color: bisque;
+    width: 250px; 
+    height: 100px;
+    text-align: center;  /*將文字移到中間*/
+    line-height: 100px;  /*字的行高跟按鈕高度一樣高就水平置中*/
+    font-size: 1.5rem;
+    border : 3px solid green;
+    border-radius: 5px; /*圓角*/
+    box-shadow: 10px 8px  12px gray ;  /*水平位置 垂直位置 暈開尺寸 色彩*/
+   }
+
+</style>
+
+</head>
+<body>
+    <!-- 建立一個超連結標籤 -->
+    <!-- 空連結表示法1:  <a href="jacascript:;">按鈕</a>  不會改變網址的原樣-->
+    <!-- 空連結表示法1:  "#"   網址的後面會加一個#字-->
+    <a href="#" class="fadeBtn">按鈕</a>   
+
+</body>
+</html>

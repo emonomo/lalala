@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>捲動時能固定位置的按鈕</title>
+
+    <style>
+        a{
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #fixTop{
+            background-color: #000;
+            padding: 15px 20px;
+            position: fixed;
+            right: 0px;
+            bottom: 0px;
+            z-index: 99;
+            display: none;
+        }
+    </style>
+  <script src="./jquery/js/jquery-1.11.3.min.js"></script>
+  <script>
+        $(function(){
+            $('body').append('<a href="#" id ="fixTop">TOP</a>');
+            //建立一個fixTop變數，程式碼較有彈性，以防id名稱之後變動
+            let fixTop = $('#fixTop');
+            //當TOP方塊被左鍵點一下時
+            fixTop.on('click',function(){
+                 //用半秒鐘的時間，捲動畫面到第一行
+                 $('html,body').animate({scrollTop:'0'},500);
+            });
+
+            //載入(網頁開啟時)、捲動、調整視窗大小時
+            $(window).on("load scroll resize",function(){
+                 //預設捲動的高度超過100時，出現TOP方塊
+                 let showTop = 100;
+                 //得到目前捲動的值
+                 let curScrollTop = $(window).scrollTop();
+                 //檢查是否超過預設高度
+                 if(curScrollTop > showTop){
+                    //如果有，顯示top方塊
+                    fixTop.fadeIn('fast');
+                 }else{
+                    //如果沒有，隱藏top方塊
+                    fixTop.fadeOut('fast');
+                 }
+            });
+        });
+  </script>
+</head>
+
+<body>
+    <!-- <a href="#">TOP</a> -->
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, velit. Quaerat, dolorem quo accusantium reprehenderit enim eum officia adipisci ab laudantium similique numquam laborum. Nostrum rem consequatur suscipit perferendis fugit beatae doloribus, illo pariatur voluptate velit esse? Dolor atque aspernatur blanditiis inventore omnis porro laboriosam suscipit delectus voluptate dignissimos veniam, rerum nemo in dolorem, reiciendis molestias labore enim numquam, vero nulla! Illo consequuntur consequatur corrupti iusto reiciendis aliquid provident quis voluptatum et qui in, nulla deleniti officiis sint commodi hic recusandae natus ullam ex non nemo id quod minus asperiores? Culpa eaque a ad, dolorum maiores ea laborum laudantium ratione ex vel minus architecto quas nulla voluptate temporibus officia ullam nam molestiae. Aliquid iusto dolores, nihil enim beatae culpa ad officiis corporis exercitationem veritatis sed at animi asperiores rem perspiciatis aut odio nemo perferendis ullam quidem suscipit nam! Saepe, culpa. Ducimus facilis placeat adipisci, neque suscipit nesciunt dolore, amet numquam officiis, necessitatibus ex iure eum. Necessitatibus optio dolor quod itaque! Ratione distinctio laborum aut sit iure unde, sunt debitis numquam provident esse. Molestias necessitatibus nihil at nesciunt ducimus repellendus eum sapiente sed error animi unde, assumenda ullam iste magni modi. Necessitatibus praesentium veritatis, suscipit sed illo dolor deserunt aspernatur. Tenetur rerum reprehenderit, at nemo quas unde asperiores nesciunt consequatur alias suscipit voluptates deserunt minima. Pariatur soluta blanditiis deleniti quibusdam? Delectus natus est reiciendis nihil dolorum voluptas perspiciatis unde ab ipsam veritatis. Dolorum debitis cumque, eligendi expedita reprehenderit ex reiciendis voluptas vitae! Soluta magni porro veniam cupiditate esse ab labore reiciendis, magnam saepe totam minima dicta. Autem aliquid maiores voluptatum excepturi velit distinctio itaque cum incidunt iure? Recusandae sequi ea adipisci, blanditiis facere provident. Optio consequuntur, doloribus, quo tenetur facere explicabo inventore, fugit ea aliquid delectus pariatur eligendi accusantium! Iure illo ullam consequatur autem molestiae earum quo et obcaecati necessitatibus explicabo tempora, recusandae saepe fugiat eius nobis dolor sequi quod natus asperiores. Expedita, obcaecati aliquid? Natus ducimus cum, provident numquam unde ad quasi pariatur sequi architecto. Nesciunt quod vitae nobis id modi, fuga inventore eaque dignissimos, totam temporibus at ullam earum, quam assumenda dolore voluptatum voluptas sunt quae cum? Sed delectus ad odit sint? Explicabo, molestiae nobis! Enim laudantium dolor maiores, nihil saepe asperiores deserunt ipsum aut quam dolorem omnis veritatis. Amet atque ut odio soluta asperiores dolores nulla, esse, quisquam, debitis tempora fuga. Quibusdam nostrum eum sunt, quo provident tenetur, nulla libero, porro error officia aliquam cumque dicta est eaque a modi perferendis. Ea quae sint alias nobis quas reiciendis provident libero consequatur molestias eius, obcaecati, ut ab, recusandae accusantium debitis quo fuga id modi totam magnam? Perferendis, a. Soluta, vel natus. Quasi blanditiis deserunt dicta dolores, maxime harum animi dolorem adipisci laudantium, eligendi vitae nemo corrupti suscipit at nisi mollitia ad! Dolorem soluta asperiores vitae numquam quisquam, rerum inventore nam. Possimus unde, deleniti quisquam repudiandae nobis cupiditate quis fuga doloribus tempora aspernatur fugit accusamus eius sit esse id odit ad ullam molestiae enim sapiente exercitationem nostrum maiores? Veniam nemo distinctio deleniti ex corrupti. Quo cum necessitatibus ad consectetur iure voluptatem deserunt velit rerum eligendi quas unde magnam, esse id dolores adipisci illo accusamus est optio sed itaque! Quibusdam magni, at ipsam debitis corporis consequuntur asperiores? Culpa soluta corrupti, aspernatur nesciunt, voluptatem doloremque unde officiis sed magni nulla reiciendis accusamus eum doloribus velit modi? Laboriosam, eum dolores quod velit delectus amet unde necessitatibus sit impedit iste sapiente dolor voluptatem consectetur sunt molestias quisquam provident, cumque itaque vel reiciendis modi, natus nam. Quidem perferendis esse error laudantium aperiam, at architecto blanditiis labore reiciendis voluptatem rerum explicabo fugit veritatis autem soluta! Saepe quod, impedit molestiae vitae, ut enim eveniet tempore quos non, totam exercitationem ab incidunt odio. Dignissimos, quis doloremque. Possimus veritatis voluptatibus minima ex eveniet! Corporis dicta nulla, natus corrupti officiis eligendi quis in fuga aliquam nobis officia necessitatibus quasi incidunt dignissimos impedit esse animi dolores alias obcaecati unde distinctio porro fugit veritatis temporibus. Repellendus, quae? Laboriosam similique, hic a error corporis recusandae? Saepe reiciendis natus non ea omnis tempora animi ex aperiam aliquam enim iure ipsam eaque nihil doloribus blanditiis quasi vel, culpa iusto quos quaerat? Soluta sit mollitia officia aut quaerat laborum ut accusantium explicabo rem dolores beatae blanditiis possimus nobis ullam animi unde officiis, amet sint consequatur! Exercitationem sint earum autem quaerat praesentium dolores assumenda, quos eaque reprehenderit aspernatur! Aperiam est fugiat dicta maiores magni magnam non repellat veritatis, nam suscipit enim quam at a pariatur provident voluptas voluptate amet dignissimos error deleniti officia id. Et quo accusamus dolorum ut assumenda eos labore nobis inventore dolores, minus rerum officiis minima placeat eligendi quae aspernatur dolorem. Quibusdam earum laboriosam, recusandae quas cupiditate autem nulla enim! Autem alias necessitatibus, distinctio a officiis ratione voluptate id numquam obcaecati fuga nam possimus ipsum rem magni dignissimos sunt cupiditate aspernatur non blanditiis exercitationem. Reiciendis sequi dolorem, tempora similique ab dicta impedit in ipsa?</p>
+
+</body>
+</html>
