@@ -1,0 +1,45 @@
+/*共同部分*/
+#wrapper{
+    width: 800px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin: 0 auto;     /*頁面水平置中*/
+    text-align: center; /*內容水平置中*/
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+/*篩選按鈕*/
+#filterBtn{ padding: 50px 0; }  
+#filterBtn a{
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding: 5px 20px;
+    margin: 0 10px;
+    background-color:  aliceblue;
+ }
+ #filterBtn a:hover{
+    background-color: #fff;
+ }
+
+ /*準備好給js動態使用，被點選到的效果(白底粗體紅字)*/
+ #filterBtn a.active{
+    color: royalblue;
+    font-weight: bold;  /*粗體字*/
+    background-color: #fff;
+ }
+ #filterList ul{
+    /* border: 1px solid salmon; */
+    margin: 0 auto;    
+    text-align: center;
+    width: 800px;
+    padding: 0;
+ }
+ #filterList ul li{
+    float: left;
+    margin: 5px;
+    width: 150px;
+    list-style: none;
+  } 
+ #filterList ul li img{width: 150px; } 
