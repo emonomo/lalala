@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       // 亂數(0-1)
+       let n1 = Math.random();
+       console.log(n1);
+       n1 = n1*100;
+      //  將亂數值的小數，無條件捨去
+       console.log(Math.floor(n1));
+
+       //使用亂數產生0-4的值 => 0,1,2,3,4
+       let n2 = Math.random()*5;  //設定數字最大到4
+       console.log('亂數值'+ n2);
+       n2 = Math.floor(n2);
+       console.log('去小數'+ n2);
+       //簡寫成:
+       console.log(Math.floor (Math.random()*5));
+
+       //使用亂數產生1-100的值 => 1,2,3,4,...100(其一)
+       let n3 = Math.random()*100+1;
+       console.log('亂數值'+ n3);
+       n3 = Math.floor(n3);
+       console.log('去小數'+ n3);
+
+       let n4 = Math.random()*50; //0-49
+       n4 = Math.floor(n4);
+       if(n4 == 0){
+        n4 = 1;
+       }
+       console.log(n4);
+
+       //let n5 =(Math.random()*49)+1 ; 
+       //1-49
+
+
+
+    //亂數產生6個數字放在陣列中，並且列印出來(範圍1-49)
+    let arr2 = [0,0,0,0,0,0] ;
+    for(let i=0 ; i<= arr2.length-1; i++){
+       let num = (Math.random()*49)+1;
+       num = Math.floor(num);
+       //檢查陣列中是否有重複值 => indexOf(檢查的值)
+       if(arr2.indexOf(num) >= 0){
+         //如有的話，再重生新的亂數
+         i--; //若發生重複，此i值要倒扣1
+         continue; //省略此次執行，直接回到迴圈的開始
+        }
+      arr2[i] = num;
+    }
+    
+    for(let i=0 ; i<= arr2.length-1; i++){
+        console.log(arr2[i]);
+    }
+
+ 
+    </script>
+</body>
+</html>

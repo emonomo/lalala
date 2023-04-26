@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 陣列 
+    // 將相同類型、連續的資料存放在陣列 
+      //同資料陣列(數字、文字...)
+          //  let arr1 = [1, 2, 3, 4, 5];
+          //  console.log(arr1);
+          //  console.log('陣列長度' + arr1.length); 
+          //  console.log('陣列第一個值' + arr1[0]);
+          //  console.log('陣列第二個值' + arr1[1]);
+          //  console.log('陣列第三個值' + arr1[2]);
+     
+          //  //使用陣列方式來印出陣列內容
+          //  for(let i =0; i< arr1.length; i++){
+          //    console.log(arr1[i]);
+          //  }  
+          //  //使用迴圈的方式來改變陣列內容
+          //  for(let i =0; i< arr1.length; i++){
+          //   arr1[i]= arr1[i]*2;
+          //    }
+             
+          //    console.log("變更後的值");
+          //    for(let i =0; i< arr1.length; i++){
+          //    console.log(arr1[i]);
+          //  }
+  
+          //  /*arr1[1]=8;
+          //   console.log(arr1[1]); //會return出 8*/
+
+      //不同資料的陣列(數字、非數字...)  
+             const arr2 = ['one', 5, 'lolo'];
+             console.log(typeof(arr2[1]));
+
+          //陣列中有陣列(二維陣列)
+             const arr3 =[ [1,2,3],['one', 5, 'lolo'] ];
+             //得到arr3中的lolo
+             console.log(arr3[1][2]);
+
+     //陣列中的物件
+             const arr4 = [
+                //物件使用{。。。}
+                {
+                    // 屬性名稱: 屬性值
+                    name: "花貓",
+                    age: 6, 
+                    heught: 160,
+                    weight:45,
+                    score:[90, 60, 100]
+                },
+                [
+                    {name:'oocc',type:'object'},
+                    {name:'mmkk',type:'object'},
+                ],
+                123,
+                function sayHi(){
+                    return "Hi";
+                },
+                "我是文字"
+
+             ];
+             console.log(arr4[1][0].name); //尋找到name:'oocc'
+
+             console.log(arr4[arr4.length-1]); //透過陣列總長度-1取得最後一項
+
+            //  console.log(arr4[0].weight);
+            //  console.log(arr4[0].score[1]);
+            //   /*會return出 45
+            //                60 */
+       
+        //當陣列長度小於資料個數?
+        const arr5 = [1, 2,,, 3];
+        console.log(arr5);
+        /*return [1, 2, empty x 2, 3]
+        lenth:5 */
+
+        const arr6 = [[1, 2,,, 3],['a',,'v']]
+        console.log(arr6[1][1]);
+        //return undefined
+
+        const arr7 = [1, 2, 3, 4, 5];
+        console.log(arr7);
+        arr7[8] = 90;
+        console.log(arr7);
+         /*return [1, 2, 3, 4, 5, empty x 3, 90]
+        lenth:9 */
+    </script>
+</body>
+</html>

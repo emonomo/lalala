@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //二數交換
+      let a = 3;
+      let b = 5;
+      let c = a;
+      a = b;
+      b = c;
+
+
+      //遞增排序
+      let arr1 = [35, 22, 28, 14];
+      console.log(arr1);
+      
+      for( let i = 0; i < arr1.length -1; i++){
+        for(let j = 0; j< arr1.length - 1 -i; j++){
+            //檢查前值是否大於後值
+            if (arr1[j] > arr1[j + 1]){
+             let temp = arr1[j];  //保存較大的值
+             //交換
+             arr1[j] = arr1[j + 1]; //小的值放前面
+            arr1[j + 1] = temp; //大的值放後面 => temp
+            
+            }
+        }
+      }
+      console.log(arr1);
+
+
+/*..........................*/
+
+      let arr2 = [0,0,0,0,0,0] ;
+    for(let i=0 ; i<= arr2.length-1; i++){
+       let num = (Math.random()*49)+1;
+       num = Math.floor(num);
+       //檢查陣列中是否有重複值 => indexOf(檢查的值)
+       if(arr2.indexOf(num) >= 0){
+         //如有的話，再重生新的亂數
+         i--; //若發生重複，此i值要倒扣1
+         continue; //省略此次執行，直接回到迴圈的開始
+        }
+      arr2[i] = num;
+    }
+
+    //排序前，找出陣列的最大值與最小值
+
+    let max = arr2[0];
+    let min = arr2[0];
+      for( let i = 1; i < arr2.length ; i ++){
+        if(arr2[i] > max ){
+             max = arr2[i];
+        } else if(arr2[i] < min){
+             min = arr2[i];
+        }
+      }
+      console.log("排序前最大值"+ max);
+      console.log("排序前最小值"+ min);
+
+
+
+
+    for( let i = 0; i < arr2.length -1; i++){
+        for(let j = 0; j< arr2.length - 1 -i; j++){
+            //檢查前值是否大於後值
+            if (arr2[j] > arr2[j + 1]){
+             let temp = arr2[j];  //保存較大的值
+             //交換
+             arr2[j] = arr2[j + 1]; //小的值放前面
+            arr2[j + 1] = temp; //大的值放後面 => temp
+            }
+        }
+      }
+      console.log(`排序後=> ${arr2}`);
+
+//遞減
+    let arr3 =[];
+    let j = 0;
+    for( let i = arr2.length-1 ; i >= 0 ; i--){
+        arr3[j] = arr2[i];
+        j++;
+    }
+    console.log(`遞減=> ${arr3}`);
+
+    </script>
+</body>
+</html>

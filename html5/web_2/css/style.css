@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+/*eric css reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    font-family: /*⻄文*/ -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+    /*中文*/ "蘋方-繁", "PingFang TC", "Noto Sans TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 共用 */
+img {
+    display: block; /*本來是inline-block,會有空白間距*/
+    width: 100%;
+}
+/* 頁首區 */
+#topbar{
+	display: flex; /*flex有預設的各種屬性，包括水平*/
+	justify-content: space-between; /*space-between(貼齊start/end)*/
+	padding: 20px;
+}
+#topbar ul{
+	display: flex;
+	justify-content: flex-end; /*主軸的方向齊尾*/
+}
+
+
+
+.logo {
+    width: 80px;
+}
+.icon a {
+	display: block;
+	width: 35px;
+	height: 35px;
+}
+.icon-fb {
+	background-image: url(../images/icon-fb.svg);
+}
+.icon-ig {
+	background-image: url(../images/icon-ig.svg);
+}
+.icon-line {
+	background-image: url(../images/icon-line.svg);
+}
+.icon-fb:hover {
+	background-image: url(../images/icon-fb-hover.svg);
+}
+.icon-ig:hover {
+	background-image: url(../images/icon-ig-hover.svg);
+}
+.icon-line:hover {
+	background-image: url(../images/icon-line-hover.svg);
+}
+.menu a {
+	display: block;
+	text-decoration: none;
+    color: gray; /*修改<a>的字色*/
+	padding: 20px;
+}
+/*偽元素 ::after/::before 只放裝飾內容*/
+.menu a::after{
+     content: "";
+}
