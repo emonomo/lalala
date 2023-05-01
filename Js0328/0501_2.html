@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <!-- 物件(Object)基本概念 
+         1-1 封裝其他資料的容器，用大括號的方式處理資料
+         1-2 建立物件 
+         1-3 封裝物件  -->
+
+    <!-- 1-2 建立物件 -->
+     <script>
+        /*
+         //一般建立函式say HI()
+          function sayHi(){
+            console.log("HIII");
+          }
+          sayHi();
+
+          let sayHi2 = function(){
+            console.log("HIII");
+          }
+          sayHi2();
+          */
+         //建立空白物件 
+         let obj1 = new Object();
+         //建立物件的成員
+         obj1.x = 3;    // 類似 let x = 3
+         obj1.y = 8;    // 類似 let y = 8
+         obj1.sayHi = function(){
+            console.log("HIII");
+         }
+           //使用物件的成員
+        console.log(obj1);    //return {x: 3, y: 8, sayHi: ƒ}
+        console.log(obj1.x);  //3
+        console.log(obj1.y);  //8
+        obj1.sayHi();   //HIII
+
+        //使用 this 關鍵字
+          let obj2 = new Object();
+          obj2.x = 3;
+          obj2.y = 4;
+          obj2.sayHi = function(){
+            console.log('moring');
+            // console.log(obj2.x);
+            // console.log(obj2.y);
+            //在物件的方法中，使用this代表物件的本身
+            console.log(this.x);
+            console.log(this.y);
+          }
+          obj2.sayHi(); 
+        //   console.log(this.x);  //在物件的方法外會變成 => undefined
+
+     </script>
+</body>
+</html>
