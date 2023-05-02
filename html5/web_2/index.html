@@ -58,6 +58,21 @@
          <!-- contact區 -->
            <section id="contact">
             <h2 class="title">Contact</h2>
+
+               <form action="" method="post" name="message_form" id="message_form">
+                <label for="username">*姓名:</label>
+                <input type="text" id="username" name="username" title="請輸入姓名" placeholder="王大山" maxlength="10" minlength="2" required autocomplete="on" >
+                
+                <label for="tel">連絡電話:</label>
+                <input type="tel" id="tel" name="tel"  title="請輸入電話" placeholder="02-3456789" autocomplete="on">
+
+                <label for="*email">*Email:</label>
+                <input type="email" id="email" name="email" title="請輸入Email" placeholder="youid@email.com"  required autocomplete="on">
+
+                <label for="massage">留言:</label>
+                <textarea name="massage" id="massage"  placeholder="歡迎填填看" title="歡迎留言"></textarea>
+               <small>(此表單為網頁功能展示，無實際蒐集資料之功能)</small>
+               </form>
            </section>
      </main>
      <!-- 頁尾區 -->

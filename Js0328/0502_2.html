@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>標題:HTML_DOM</title>
+</head>
+<body id="myBooDie" class="myBooDie">
+   
+    <h1>標題一</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. C et tempore porro cupiditate sit fuga.</p>
+
+       <!-- HTML DOM(節點) -->
+
+       <script>
+        //HTML DOM的入口
+        //window物件:  (內建的，瀏覽器視窗資訊)
+        console.log(window);
+        console.log('視窗的寬度:'+ window.innerWidth); //抓視窗的寬度
+        console.log('視窗的高度:'+ window.innerHeight); //抓視窗的高度
+        // alert('視窗的高度:' + window.innerHeight);//彈出視窗_抓視窗的高度
+
+        //screen 物件 (內建的，使用者螢幕資訊)
+        console.log(window.screen);
+        console.log('螢幕寬度:' + window.screen.width); //顯示器解析度  不一定要打window
+        console.log('螢幕高度:' + window.screen.height); //顯示器解析度  不一定要打window
+
+        // document 物件(內建的，網頁的內容)
+        console.log(window.document);      //不一定要打window
+        console.log(window.document.title);
+        console.log(document.body);
+
+
+/*------------------------下半堂課--------------------------------*/
+
+ 
+      console.log(`視窗寬高 => ${window.innerWidth},${window.innerHeight}` );
+      console.log('螢幕寬高 =>'+ screen.width + ',' + screen.height);
+      //取得網址內容
+      console.log('網址 =>' + location.href);
+      //更改網址的內容，會發生跳轉頁面 
+          // window.location.href = 'https://www.google.com.tw/?hl=zh_TW'
+      
+      //取得網頁標題
+        console.log('網頁標題 =>'+ document.title);
+      //更改網頁標題 
+        document.title = 'my web';
+
+       //取得body標籤
+       console.log(document.body) ;
+       //取代body內容
+        document.body.innerHTML = 'hello';  //像是放這句，我前面的 h1, p 會被取代
+
+        //取得body id名稱
+        console.log('body id名稱 =>' + document.body.id);
+        //取得body class名稱
+        console.log('body class名稱 =>' + document.body.className);
+       </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json物件表示法</title>
+</head>
+<body>
+    <script>
+      /* 昨天教的 
+
+      //一般建立物件的方式，使用 new 識別字
+      let people = new Object();
+      //建立屬性成員
+      people.name = "xoxo";
+      people.age  = 20;
+      //建立方法成員
+      people.sayHi = function(){
+          console.log("hiii");
+      }
+      //使用物件
+      //呼叫物件中的方法成員
+      people.sayHi();
+      //呼叫物件中的屬性成員
+      console.log(people.name);
+      console.log(people.age)
+      */ 
+     
+      
+    //建立物件二:json物件表示法
+    /*  語法:
+       {
+        成員名稱1:資料1,
+        成員名稱2:資料2,
+        }
+    */
+     //小提醒:   obj1.w 也可以寫為 this.w
+
+       let obj2 ={
+           test:'6666'
+       }
+
+
+    let obj1 ={
+      name: "xoxox",
+      age: 20,
+      sayHi: function(){
+          console.log("hiiii");
+      },
+      h: 150,
+      w: 60,
+       //BMI = 體重/身高(公尺)的平方  
+      bmi:function(){
+         let x = Math.round(obj1.w / Math.pow((obj1.h/100),2));
+        /* let x = Math.round((obj1.w / Math.pow((obj1.h/100),2))*100)*100;  數值會是比較安全的寫法*/
+         console.log(`您的bmi為:${x}`);
+      },
+      testing:function(){
+        console.log(this.test);  
+      }
+    };
+    //使用物件
+    console.log(obj1.name);
+    console.log(obj1.age);
+    obj1.sayHi();
+    obj1.bmi();
+    obj1.testing();  // return undefined
+ 
+
+
+    </script>
+</body>
+</html>

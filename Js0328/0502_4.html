@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML DOM畫面操作</h1>
+    <div id="content">操作區</div>
+    <p></p>
+    <button onclick="change();"> 變化</button>
+       
+   <script>
+        function change(){
+            //左鍵按一下變化按鈕時要處理的事
+            //alert('hi');
+            //取得標籤物件
+            let elem = document.querySelector('#content');
+            //操作標籤物件
+            elem.innerHTML = '<h3>新的內容</h3>';
+            elem.className =  'demo';
+            elem.style.fontSize = '20 px';
+            elem.style.color = 'pink';
+        }
+
+   </script>
+
+
+<div>
+    <a href="#" onclick="changeToAbout()";> 關於我</a>
+    <a href="#" onclick="changeToExps()";> 學經歷</a>
+</div>
+<hr>
+<div id="about">
+    關於我
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, error?</p>
+</div>
+
+<div id="exps" style="display: none;"> <!-- 隱藏 --> 
+    學經歷
+    <p>Lorem ipstur adipisicing elit. Nisi, error?</p>
+</div>
+<script>
+    function changeToAbout(){
+        // alert('changeToAbout()');
+        //取得標籤物件
+        let aboutDiv = document.querySelector('#about');
+        let aboutExps = document.querySelector('#exps');
+        //操作標籤物件
+        aboutDiv.style.display = 'block'; //顯示
+        aboutExps.style.display = 'none';  //隱藏
+    }
+    function changeToExps(){
+        // alert('changeToExps()');
+        //取得標籤物件
+        let aboutDiv = document.querySelector('#about');
+        let aboutExps = document.querySelector('#exps');
+        //操作標籤物件
+        aboutDiv.style.display = 'none';  //隱藏
+        aboutExps.style.display = 'block'; //顯示
+    }
+/*-----------------或是--------------------------*/
+   
+let aboutDiv = document.querySelector('#about');
+let aboutExps = document.querySelector('#exps');
+
+function changeToAbout(){
+        aboutDiv.style.display = 'block'; //顯示
+        aboutExps.style.display = 'none';  //隱藏
+    }
+function changeToExps(){
+        aboutDiv.style.display = 'none';  //隱藏
+        aboutExps.style.display = 'block'; //顯示
+    }
+
+
+</script>
+        
+</body>
+</html>
