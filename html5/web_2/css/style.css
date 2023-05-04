@@ -25,6 +25,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	box-sizing: border-box;  /*不累加邊框與內距 rwd 甜甜*/
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -168,17 +169,119 @@ section{
 #message_form > *{
     display: block;
 	width: 100%;
+	box-sizing: border-box; /*最上面有設定了，但表單不包括 所以要另外加入*/
+	
 }
+
+::placeholder{
+	font-size: .8rem;
+	color: rgb(87, 87, 87);
+}
+
+#message_form input,#message_form textarea{
+	padding: 10px 15px;
+	/*玻璃擬態(毛玻璃)*/
+	backdrop-filter: blur(12px); /*背景模糊濾鏡 (要再搭配透明度)*/
+	background-color: rgba(241, 230, 229, 0.2);  /*顏色的最後一項是透明度*/
+	border:2px solid rgba(255, 255, 255,0.1); /*改變input邊框的預設樣式*/
+	/*寫了兩個不同方位的陰影*/
+	box-shadow: inset -1px -1px 1px rgba(255, 255, 255,0.5), 1px 1px 5px rgba(2, 2, 2,0.2);
+}
+
+#message_form input{
+	font-size: .85rem;
+	color: rgb(154, 106, 106);
+	border-radius: 100px;
+	
+}
+
+#message_form textarea {
+	height: 4.25rem; /*對應字級高度(0.85*想要(5)行)*/
+	border-radius: 10px;
+}
+
 #message_form label{
    margin: 30px 0 10px;
+   font-size: .85rem;
+   letter-spacing: .1rem;
+   color: rgb(117, 98, 121);
 }
 
-#message_form small{
+#contact small{
+	color: rgb(87, 87, 87);
 	margin-top: 30px;
-	text-align: center;
 	font-size: .8rem;
+	text-align: center;
  }
 
+
+ /*css套件*/
+ button {
+	position: relative;
+	outline: none;
+	text-decoration: none;
+	border-radius: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	text-transform: uppercase;
+	height: 60px;
+	width: 210px;
+	opacity: 1;
+	background-color: #ffffff;
+	border: 1px solid rgba(22, 76, 167, 0.6);
+  }
+  button span {
+	color: #164ca7;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.7px;
+  }
+  button:hover {
+	animation: rotate 0.7s ease-in-out both;
+  }
+  button:hover span {
+	animation: storm 0.7s ease-in-out both;
+	animation-delay: 0.06s;
+  }
+  
+  @keyframes rotate {
+	0% {
+	  transform: rotate(0deg) translate3d(0, 0, 0);
+	}
+	25% {
+	  transform: rotate(3deg) translate3d(0, 0, 0);
+	}
+	50% {
+	  transform: rotate(-3deg) translate3d(0, 0, 0);
+	}
+	75% {
+	  transform: rotate(1deg) translate3d(0, 0, 0);
+	}
+	100% {
+	  transform: rotate(0deg) translate3d(0, 0, 0);
+	}
+  }
+  @keyframes storm {
+	0% {
+	  transform: translate3d(0, 0, 0) translateZ(0);
+	}
+	25% {
+	  transform: translate3d(4px, 0, 0) translateZ(0);
+	}
+	50% {
+	  transform: translate3d(-3px, 0, 0) translateZ(0);
+	}
+	75% {
+	  transform: translate3d(2px, 0, 0) translateZ(0);
+	}
+	100% {
+	  transform: translate3d(0, 0, 0) translateZ(0);
+	}
+  }
+
+ 
 
 /* footer區 */
 footer{
