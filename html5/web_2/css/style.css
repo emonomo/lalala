@@ -1,4 +1,8 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');   
+/* 注意! google fonts 要放在第二行 */
+
+
 
 /*eric css reset */
 
@@ -96,9 +100,89 @@ img {
 	display: block;
 	text-decoration: none;
     color: gray; /*修改<a>的字色*/
-	padding: 20px;
+	padding:8px 20px;
 }
+
+.menu a:hover {
+	display: block;
+	text-decoration: none;
+    color: rgb(26, 166, 217); 
+	padding:10px 20px;
+}
+
 /*偽元素 ::after/::before 只放裝飾內容*/
-.menu a::after{
-     content: "";
+.menu li::after{
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(57, 166, 144);
+    
+}
+
+.menu li:hover::after {
+    width: 100%;
+	transition: .35s ease-in-out; /* 轉場動畫 */
+}
+/* 主要內容共用 */
+
+main > * {       /* 取得<main>第一層所有元素 */
+    height: 100vh;
+}
+section{
+	display: flex;       /*預設值:主軸為水平*/
+    flex-direction: column;   /*設定主軸改為垂直*/
+	justify-content: center;   /*設定主軸(垂直)置中*/
+	align-items: center;   /*設定副軸(水平)置中*/
+}
+.title {
+	font-family: 'Charm', cursive;
+	font-size: 3rem;
+	padding-top: 15px;
+	border-top: 2px solid grey;  /*設定一條線~*/
+}
+/* news區  */
+#news{
+	background-color: #f2edf0;
+}
+/* service區 */
+#service{
+	background-color: #e6ece5;
+}
+/* video區 */
+#video{
+	background-color: #ecf0f4;
+}
+/* About區 */
+
+/* contact區 */
+#contact{
+	background-image: url('../images/bg_contact.jpg');
+	background-size: cover; /*覆蓋:自動拉伸圖片 並裁切多餘部分*/
+	background-position: center;/*圖片在畫面置中縮放 (本來只切右邊)*/
+	background-attachment: fixed;
+}	
+#message_form{
+	width: 35%;
+}
+#message_form > *{
+    display: block;
+	width: 100%;
+}
+#message_form label{
+   margin: 30px 0 10px;
+}
+
+#message_form small{
+	margin-top: 30px;
+	text-align: center;
+	font-size: .8rem;
+ }
+
+
+/* footer區 */
+footer{
+	background-color: #f2edf0;
+	padding: 50px;  /*  內距包含背景色 */
+	text-align: center; 
 }
