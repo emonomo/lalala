@@ -1,5 +1,9 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');   
+@import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');  
+@font-face {
+	font-family: 'KasseFLFBold'; /*自定義這個字體的名稱*/
+	src: url('../webfonts/KasseFLF-Bold.ttf');
+} 
 /* 注意! google fonts 要放在第二行 */
 
 
@@ -60,10 +64,16 @@ img {
 }
 /* 頁首區 */
 #topbar{
+	position: fixed;  /*固定在上方*/
+	top: 0;
+	left: 0;
+	width: 100%; /*只要寫position寬度就會變成內容寬度 所以要再補上*/
+	
 	display: flex; /*flex有預設的各種屬性，包括水平*/
 	justify-content: space-between; /*space-between(貼齊start/end)*/
 	padding: 20px;
 }
+
 #topbar ul{
 	display: flex;
 	justify-content: flex-end; /*主軸的方向齊尾*/
@@ -97,6 +107,20 @@ img {
 .icon-line:hover {
 	background-image: url(../images/icon-line-hover.svg);
 }
+
+
+.menu{
+	padding: 5px 15px;
+	margin-top: 15px;
+	border-radius: 50px;
+	/*玻璃擬態(毛玻璃)*/
+	backdrop-filter: blur(12px); /*背景模糊濾鏡 (要再搭配透明度)*/
+	background-color: rgba(241, 230, 229, 0.2);  /*顏色的最後一項是透明度*/
+	border:2px solid rgba(255, 255, 255,0.1); /*改變input邊框的預設樣式*/
+	/*寫了兩個不同方位的陰影*/
+	box-shadow: inset -1px -1px 1px rgba(255, 255, 255,0.5), 1px 1px 5px rgba(2, 2, 2,0.2);
+}
+
 .menu a {
 	display: block;
 	text-decoration: none;
@@ -108,7 +132,7 @@ img {
 	display: block;
 	text-decoration: none;
     color: rgb(26, 166, 217); 
-	padding:10px 20px;
+	padding:8px 20px;
 }
 
 /*偽元素 ::after/::before 只放裝飾內容*/
@@ -142,10 +166,69 @@ section{
 	padding-top: 15px;
 	border-top: 2px solid grey;  /*設定一條線~*/
 }
+
+.list_box{
+	display: flex;
+	width: 80%;
+	margin-top: 30px;
+}
+
+.list_item{
+	margin: 0 15px;
+	flex: 1;
+	border-radius: 20px 20px 0 0;
+	box-shadow:2px 2px 5px rgba(0, 0, 0, 0.15);
+	overflow: hidden; /*內容溢出時，自動隱藏*/
+}
+
+.list_item div{
+	padding: 20px;
+}
+
+.list_item h2{
+	font-family: 'KasseFLFBold', sans-serif;
+}
+
 /* news區  */
 #news{
 	background-color: #f2edf0;
 }
+#news figure{
+	height: 50vh;
+}
+
+#news img{
+	object-fit: cover; /*覆蓋且自動置中*/
+	height: 100%;
+}
+
+#news p{
+	margin: 15px 0;
+	font-size: 1.1rem;
+	line-height: 1.4rem; /*行距*/
+	text-align: justify; /*!!!!!齊行的意思*/
+
+	/*以下幾行為 多行省略的寫法*/
+	overflow: hidden;
+	text-overflow: ellipsis;  /*文字超過時出現省略號*/
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;   /*行數*/
+}
+
+#news a{
+	display: block;
+	text-align: right;
+	color: #3c393b;
+	text-decoration: none;
+}
+
+#news a:hover{
+	color: #864c72;
+	text-decoration: underline;
+}
+
+
 /* service區 */
 #service{
 	background-color: #e6ece5;
@@ -215,27 +298,35 @@ section{
  }
 
 
- /*css套件*/
- button {
-	position: relative;
+ /*css套件_老師提供的codepen*/
+ #message_form button {
+	/* position: relative; */
 	outline: none;
-	text-decoration: none;
+	/* text-decoration: none; */
 	border-radius: 50px;
-	display: flex;
+	display: flex; /*必須是flex才能分開滑動*/
 	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	text-transform: uppercase;
+	align-items: center; 
+	cursor: pointer;   /*游標樣式: 手型*/
+	/* text-transform: uppercase; */
 	height: 60px;
-	width: 210px;
-	opacity: 1;
+	width: 50%;
+	margin: 50px auto;
+	/* opacity: 1; 
 	background-color: #ffffff;
-	border: 1px solid rgba(22, 76, 167, 0.6);
+	border: 1px solid rgba(22, 76, 167, 0.6);*/
+	/*玻璃擬態(毛玻璃)*/
+    backdrop-filter: blur(12px); /*背景模糊濾鏡 (要再搭配透明度)*/
+	background-color: rgba(241, 230, 229, 0.2);  /*顏色的最後一項是透明度*/
+	border:2px solid rgba(255, 255, 255,0.1); /*改變input邊框的預設樣式*/
+	/*寫了兩個不同方位的陰影*/
+	box-shadow: inset -1px -1px 1px rgba(255, 255, 255,0.5), 1px 1px 5px rgba(2, 2, 2,0.2);
+
   }
   button span {
-	color: #164ca7;
-	font-size: 12px;
-	font-weight: 500;
+	color: #494949;
+	font-size: 1rem;
+	/* font-weight: 500; */
 	letter-spacing: 0.7px;
   }
   button:hover {
