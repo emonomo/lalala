@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解構賦值</title>
+</head>
+<body>
+    <!-- 解構賦值 -->
+    <!-- 
+        解構: 將陣列中或物件中的資料拆開
+        賦值: 將拆開的資料分別存在不同的變數
+     -->
+
+     <script>
+        //傳統的作法
+        let arr1 =['a', 2, 4];
+        let str1 = arr1[0];
+        let str2 = arr1[1];
+        let str3 = arr1[2];
+
+        //解構賦值的作法
+        let arr2 = [1, 2, 3];
+        let [n1, n2, n3] = arr2;
+
+          //解構賦值各種不同狀況下的作法
+          let arr3 = ['a', 'b', 'c'];
+          let s1, s2, s3;
+          [s1, s2, s3] = arr3;
+
+          //陣列中有資料的話，解構之後以資料為主
+          let arr4 = [6,7];
+          let b1, b2, b3;
+          [ b1, b2 = 2, b3 = 8] = arr4;
+          console.log(b1);   //return 6
+          console.log(b2);   //return 7 ，不會變成2 以資料為主
+          console.log(b3);   //return 8
+
+
+      //將陣列資料拆解出來4個變數，log出來
+        let arr5 = [3, 4, 5, 3];
+        [m1, m2, m3, m4] = arr5;
+        console.log(m1, m2, m3, m4);
+
+      //資料交換(使用解構賦值的作法)  
+        let k1 = 3;
+        let k2 = 5;
+        [k2, k1] = [k1, k2] ;
+        console.log(k1, k2);
+
+               /*一般的寫法.
+                 let temp = k1;
+                 k1 = k2;
+                 k2 = temp;
+                console.log(k1, k2);
+              */
+
+      
+     </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>物件的解構賦值</title>
+</head>
+<body>
+    <!-- ES6 -->
+
+        <!-- 傳統的物件作法 -->
+        <script>
+            let obj1 ={
+                x:3,
+                y:5     
+            };
+            let x = obj1.x;
+            let y = obj1.y; 
+            console.log(x,y);
+        </script> 
+        <!-- ES6 -->
+        <!-- 物件的解構賦值 -->  
+        <script>
+            let obj = {
+                g:3,
+                m:5
+            };
+            //宣告變數再給值
+            let d1, d2;
+            ({g: d1,m: d2} = obj);  //因為沒有和宣告寫再一起要加()
+            console.log(d1, d2);
+            //-------或是-----------
+            let {g: d3,m: d4}=obj; //宣告 給值寫在同一行，不用加()
+            console.log(d3, d4);
+
+
+            /* 補充(還沒抄完):
+            let obj2 ={ k:8 };
+            let k1, k2;
+            ({k,kk=99} = obj2);
+            console.log(k,kk);*/
+
+        </script>
+</body>
+</html>

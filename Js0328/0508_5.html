@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭頭函式</title>
+</head>
+<body>
+ 
+    <!-- 箭頭函式(Arrow Function) -->
+    <!-- 核心的結構 -->
+    <!-- 
+        1. 函式的本體
+        2. 函式的參數
+        3. 函釋的回傳值(return 回傳值)
+     -->
+     <!-- 語法 -->
+     <!-- 一般的寫法 一-->
+        <!-- 
+        <script>
+            function 函式名稱(參數列表){
+                函式區塊內部的程式碼
+                return 回傳值;
+            }
+        </script> 
+        -->
+
+     <!-- 一般的寫法 二-->
+        <!-- 
+        <script>
+           let 函式名稱 = function(參數列表){
+                函式區塊內部的程式碼
+                return 回傳值;
+            }
+        </script> 
+        -->
+
+     <!-- 箭頭函式寫法 ES6寫法-->
+        <!-- 
+        <script>
+            let 函式名稱 = (參數列表)=> {
+                函式區塊內部的程式碼
+                return 回傳值;
+            }
+        </script>  
+        -->
+        <script>
+           // 寫法一
+                function add1(n1,n2){
+                    let result = n1 + n2;
+                    return result;
+                }
+                let ans1 = add1(20,30);
+                console.log(ans1);
+           // 寫法二
+                let add2 = function(n1,n2){
+                    let result = n1 + n2;
+                    return result;
+                }           
+                let ans2 = add1(20,30);
+                console.log(ans1);
+           // 寫法三(箭頭函式)
+                let add3 = (n1,n2) => {
+                    let result = n1 + n2;
+                    return result;
+                }   
+                let ans3 = add1(20,30);
+                console.log(ans1);
+
+
+       //寫1+2+3+...+n
+
+/*我寫的
+       // 寫法一
+            function math1(n){
+                let ans = ((1 + n)*n)/2;
+                return ans;
+            }   
+            console.log(math1(10));
+       // 寫法二
+            let math2 = function(n){
+                let ans = ((1 + n)*n)/2;
+                return ans;
+            }   
+            console.log(math2(10));
+       // 寫法三
+            let math3 = (n) => {
+            let ans = ((1 + n)*n)/2;
+            return ans;
+            }   
+            console.log(math3(10));
+*/
+
+/*老師寫的*/
+    let inputNumber = Number(prompt('請輸入任意值')) ;
+     // 寫法一
+      function add4(max){
+          let s = 0;
+          for(let i = 1; i <= max; i++){
+            s = s + i;
+            // s += i;
+          }
+          return s;
+      }    
+         let ans4 = add4(inputNumber);10
+         console.log(`寫法一 ${ans4}`);
+       
+     // 寫法二 
+       let add5 = function(max){
+          let s = 0;
+          for(let i = 1; i <= max; i++){
+            s = s + i;
+          }
+          return s;
+      }
+         let ans5 = add5(inputNumber);
+         console.log(`寫法二 ${ans5}`);
+
+     // 寫法二 
+       let add6 = function(max){
+          let s = 0;
+          for(let i = 1; i <= max; i++){
+            s = s + i;
+          }
+          return s;
+      }
+         let ans6 = add6(inputNumber);
+         console.log(`寫法三 ${ans6}`);
+       
+     
+     
+     </script>
+</body>
+</html>

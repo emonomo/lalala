@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圖片覆蓋效果 position概念</title>
+
+<style>
+    .imgbox{
+        /* border: 1px solid blue; */
+        position: relative;
+        /* 與圖片同高 */
+        width: 200px;
+        height: 200px;
+        margin: 50px;
+    }
+
+    .imgbox img{
+         position: absolute;
+    }
+    .imgbox .mask{
+        position: absolute;
+        background-color: gray;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        line-height: 200px;
+        opacity: 0;
+        transition: all 1s ; /*動畫要寫在遮罩上*/   
+    }
+
+
+    .imgbox .mask a{
+        font-size: 1.5rem;
+        color: rgb(240, 248, 255);
+        text-decoration: none;
+    }
+
+    .imgbox:hover .mask{
+        opacity: .7;
+    }
+
+   /* 左到右覆蓋  */
+    .imgbox2{
+        /* border: 1px solid blue; */
+        position: relative;
+        /* 與圖片同高 */
+        width: 200px;
+        height: 200px;
+        margin: 50px;
+    }
+
+    .imgbox2 img{
+         position: absolute;
+    }
+    .imgbox2 .mask2{
+        position: absolute;
+        background-color: gray;
+        width: 0px;
+        height: 200px;
+        text-align: center;
+        line-height: 200px;
+        opacity: 0;
+        transition: all 1s ; /*動畫要寫在遮罩上*/   
+
+    }
+
+
+    .imgbox2 .mask2 a{
+        font-size: 1.5rem;
+        color: rgb(240, 248, 255);
+        text-decoration: none;
+    }
+
+    .imgbox2:hover .mask2{
+        opacity: .7;
+        width: 100%;
+    }
+ 
+    /* 上到下覆蓋  */
+    .imgbox3{
+        /* border: 1px solid blue; */
+        position: relative;
+        /* 與圖片同高 */
+        width: 200px;
+        height: 200px;
+        margin: 50px;
+    }
+
+    .imgbox3 img{
+         position: absolute;
+    }
+    .imgbox3 .mask3{
+        position: absolute;
+        background-color: gray;
+        width: 200px;
+        height: 0px;
+        text-align: center;
+        line-height: 200px;
+        opacity: 0;
+        transition: all 1s ; /*動畫要寫在遮罩上*/   
+    }
+
+
+    .imgbox3 .mask3 a{
+        font-size: 1.5rem;
+        color: rgb(240, 248, 255);
+        text-decoration: none;
+    }
+
+    .imgbox3:hover .mask3{
+        opacity: .7;
+        height: 100%;
+    }
+
+    /* 內到外覆蓋 */
+    .imgbox4{
+        /* border: 1px solid blue; */
+        position: relative;
+        /* 與圖片同高 */
+        width: 200px;
+        height: 200px;
+        margin: 50px;
+    }
+
+    .imgbox4 img{
+         position: absolute;
+    }
+    .imgbox4 .mask4{
+        position: absolute;
+        background-color: gray;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        line-height: 200px;
+        opacity: 0;
+        transition: all 1s ; /*動畫要寫在遮罩上*/   
+        transform: scale(0,0);
+    }
+
+
+    .imgbox4 .mask4 a{
+        font-size: 1.5rem;
+        color: rgb(240, 248, 255);
+        text-decoration: none;
+    }
+
+    .imgbox4:hover .mask4{
+        opacity: .7;
+        transform: scale(.8,.6); /*scale(1,1)會是正方形*/
+    }
+
+
+    /* 縮放+旋轉 */
+    .imgbox5{
+        /* border: 1px solid blue; */
+        position: relative;
+        /* 與圖片同高 */
+        width: 200px;
+        height: 200px;
+        margin: 50px;
+        overflow: hidden; /*旋轉時會超出範圍，若要隱藏，可以使用*/
+    }
+
+    .imgbox5 img{
+         position: absolute;
+    }
+    .imgbox5 .mask5{
+        position: absolute;
+        background-color: gray;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        line-height: 200px;
+        opacity: 0;
+        transition: all 1s ; /*動畫要寫在遮罩上*/   
+        transform: scale(0)rotate(180deg); /*縮放*/
+ 
+    }
+
+
+    .imgbox5 .mask5 a{
+        font-size: 1.5rem;
+        color: rgb(240, 248, 255);
+        text-decoration: none;
+    }
+
+    .imgbox5:hover .mask5{
+        opacity: .7;
+        transform: scale(1)rotate(360deg);
+    }
+
+/* 左上到右下覆蓋 */
+        .imgbox6{
+        /* border: 1px solid blue; */
+        position: relative;
+        /* 與圖片同高 */
+        width: 200px;
+        height: 200px;
+        margin: 50px;
+        overflow: hidden; /*旋轉時會超出範圍，若要隱藏，可以使用*/
+    }
+
+    .imgbox6 img{
+         position: absolute;
+    }
+    .imgbox6 .mask6{
+        position: absolute;
+        background-color: gray;
+        width: 0px;
+        height: 0px;
+        text-align: center;
+        line-height: 200px;
+        opacity: 0;
+        transition: all 1s ; /*動畫要寫在遮罩上*/   
+ 
+    }
+
+
+    .imgbox6 .mask6 a{
+        font-size: 1.5rem;
+        color: rgb(240, 248, 255);
+        text-decoration: none;
+    }
+
+    .imgbox6:hover .mask6{
+        opacity: .7;
+        width: 200px;
+        height: 200px;
+    }
+
+</style>
+
+</head>
+<body>
+    <!-- 圖片覆蓋效果 -->
+    <!-- 建立一個對齊基準點 -->
+    <div class="imgbox">
+        <p>圖片覆蓋效果</p>
+       <img src="https://picsum.photos/id/200/200" alt="">
+      <!-- 遮色區 -->
+       <div class="mask">
+          <a href="#">more</a>
+       </div>
+    </div>
+    
+   <!-- 左到右覆蓋  -->
+    <div class="imgbox2">
+        <p>左到右覆蓋</p>
+        <img src="https://picsum.photos/id/842/200" alt="">
+       <!-- 遮色區 -->
+        <div class="mask2">
+           <a href="#">more</a>
+        </div>
+     </div>
+    <!-- 上到下覆蓋 -->
+     <div class="imgbox3">
+        <p>上到下覆蓋</p>
+        <img src="https://picsum.photos/id/259/200" alt="">
+       <!-- 遮色區 -->
+        <div class="mask3">
+           <a href="#">more</a>
+        </div>
+     </div>
+   
+     <!-- 內到外覆蓋 -->
+     <div class="imgbox4">
+        <p>內到外覆蓋 scale(1,1):正方形</p>
+        <img src="https://picsum.photos/id/313/200" alt="">
+       <!-- 遮色區 -->
+        <div class="mask4">
+           <a href="#">more</a>
+        </div>
+     </div>
+
+    <!-- 縮放+旋轉 --> 
+    <p>縮放+旋轉</p> 
+    <div class="imgbox5">
+       <img src="https://picsum.photos/id/441/200" alt="">
+    <!-- 遮色區 -->
+       <div class="mask5">
+          <a href="#">more</a>
+       </div>
+    </div>
+
+     <!--我自己亂用的_左上到右下覆蓋 -->
+     <p>我自己亂用的_左上到右下覆蓋</p>
+      <div class="imgbox6">
+        <img src="https://picsum.photos/id/377/200" alt="">
+       <!-- 遮色區 -->
+        <div class="mask6">
+           <a href="#">more</a>
+        </div>
+     </div>
+</body>
+</html>

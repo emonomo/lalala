@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件處理流程</title>
+    <style>
+        marquee{
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <!-- 事件處理流程
+         ---
+            1.在甚麼標籤上
+            2.發生什麼事(是一種行為)
+            3.做甚麼處理
+        
+        常見事件指令
+        1. 左鍵一下時: click
+        2. 滑鼠移入:   mouseover
+        3. 滑鼠移出:   mouseout
+        4. 滑鼠按下不放:   mousedown =>按住不放
+        5. 滑鼠放開:       mouseup =>彈起來時
+        6. 滑鼠移動:   mousemove
+
+
+        -->
+    <marquee onmouseover="stop();" onmouseout="start();">12345</marquee>
+<!--    
+    <button 
+    onclick="console.log('onclick');"
+    onmouseover="console.log('onnmouseover');"
+    onmouseout="console.log('onnmouseout');"    
+    onmousedown="console.log('onmousedown');"
+    onmouseup="console.log('onmouseup');"
+    onmousemove="console.log('onmousemove');"
+    >打招呼!</button> -->
+
+    <button onclick="sayHi();">這是招呼按鈕</button>
+    <div id="showMsg"></div>
+    <script>
+        //透過別人處理
+        function sayHi(){
+            console.log('say Hiiii');
+            document.querySelector('#showMsg').innerHTML = 'Hii';
+        }
+    </script>
+
+
+<hr>
+<!-- 另外一種事件處理 -->
+<!-- 處理自己 -->
+   <button>第二招呼按鈕</button>
+    <div  onclick="sayHi2(this);" id="showMsg2">123</div>
+    <script>
+        function sayHi2(elem){
+            elem.innerHTML = 'Hiouo';
+        }
+    </script>
+    <!-- <button onclick="sayHi2(this);">第二招呼按鈕</button>
+    <div id="showMsg2"></div>
+    <script>
+        function sayHi2(elem){
+            elem.innerHTML = 'Hiouo';
+        }
+    </script> -->
+
+
+   <!-- 第二種事件處理 : 按鈕按下不放時會變色-->
+   <button
+   onmousedown="down(this);"
+   onmouseup="up(this);"
+   >變色</button> 
+   <script>
+    function down(elem){
+        elem.style.color ="red";
+    }
+    function up(elem){
+        elem.style.color ="black";
+    }
+   </script>
+</body>
+</html>
