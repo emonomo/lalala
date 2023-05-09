@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Operator 其餘運算</title>
+</head>
+<body>
+    <!-- 其餘運算符號(三個點...) -->
+    <!-- 
+        1. 運用在解構賦值中
+           1-1 陣列:把剩餘的資料包在一個新的陣列中
+           1-2 物件:把剩餘的資料包在一個新的物件中
+     -->
+     <script>
+        let arr1=[1, 2, 3, 4, 5]
+            //解構賦值的作法
+            let [m1, m2, m3, m4, m5] = arr1;
+            console.log(arr1);
+            console.log(m1, m2, m3, m4, m5);
+            //解構賦值+ 其餘運算的作法
+            let[a1,a2,...data] = arr1;
+            console.log(data);  //return 3,4,5
+            
+            //限制: 必須放在最後面
+            let arr2 = ['a','b','c','d','e'];
+            let [d1,...data2] = arr2;
+            console.log('data2 =>'+ data2);  //return data2 =>b,c,d,e
+     </script>
+</body>
+</html>

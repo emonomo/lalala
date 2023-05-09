@@ -72,6 +72,7 @@ img {
 	display: flex; /*flex有預設的各種屬性，包括水平*/
 	justify-content: space-between; /*space-between(貼齊start/end)*/
 	padding: 20px;
+	z-index: 1;
 }
 
 #topbar ul{
@@ -233,18 +234,138 @@ section{
 #service{
 	background-color: #e6ece5;
 }
+
+#service .list_box{
+	height: 60vh;
+}
+
+#service .list_item{
+	display: flex;
+	align-items: flex-end;
+	background-size: cover;
+	background-position: center;
+}
+
+#service p{
+	/* 單行省略 */
+	margin-top: .6rem;
+    overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#service a{
+	display: block; /*從行內轉為block時 才抓得到寬度*/
+	width: 100%;
+	padding: 15px;
+	background-color:rgba(0, 0, 0, 0.4);
+
+    /* 修改超連結樣式 */
+	color: #fff;
+	text-decoration: none;
+}
+
+#service p:hover{
+    text-decoration: underline;
+}
+
+.service_1{
+	background-image: url('../images/pt_svc1.jpg');
+}
+.service_2{
+	background-image: url('../images/pt_svc2.jpg');
+}
+.service_3{
+	background-image: url('../images/pt_svc3.jpg');
+}
+.service_4{
+	background-image: url('../images/pt_svc4.jpg');
+}
+
+
 /* video區 */
 #video{
 	background-color: #ecf0f4;
 }
+
+#video video{
+	height: 70vh;
+	margin-top: 30px;
+}
 /* About區 */
+#about{
+	position: relative; /*設定position，video會認他為爸(relative沒有座標位置 會正常排列*/
+}
+
+#about video{
+	position: absolute;/*會往上找已設定的position父層去開始定位*/
+	top: 0;
+	left: 0;
+	z-index: -1;
+	/*(影片)物件的rwd填滿*/
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+
+	/* 影片濾鏡效果 */
+	filter: brightness(80%) sepia(10%) opacity(0.5);
+	background-color: #d2b4b4;
+	 /*100%是原始亮度   sepia棕褐色調*/
+}
+
+#about div{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 60%;
+	height: 100vh;
+	padding: 0 50px;
+	background-color: rgba(222, 197, 212, 0.5);
+	backdrop-filter: blur(5px);
+	
+}
+#about p.scrollbox{   /*#about裡面有個p 取名class="scrollbox"    (p可略=> #about .scrollbox)*/
+	margin-top: 15px;
+	height: 70vh;
+	overflow: auto; /*超過會給卷軸*/
+    padding: 0 30px;
+}
+
+/* 卷軸樣式修改 */
+.scrollbox::-webkit-scrollbar {
+	width: 10px;
+	background: #eee;
+  }
+
+/* .scrollbox::-webkit-scrollbar:horizontal {
+	height: 10px;
+  }    
+  水平卷軸的控製，在此我不需要*/
+  
+  .scrollbox::-webkit-scrollbar-button {
+	width: 10px;
+	height: 10px;
+	background: #745454;
+  }
+  
+  .scrollbox::-webkit-scrollbar-thumb {
+	background: #b6a2a2;
+  }
+  
+  /* .scrollbox::-webkit-scrollbar-corner {
+	background: #ddd;
+  } 
+  我沒有右下的角 */
+  
+
 
 /* contact區 */
 #contact{
 	background-image: url('../images/bg_contact.jpg');
 	background-size: cover; /*覆蓋:自動拉伸圖片 並裁切多餘部分*/
 	background-position: center;/*圖片在畫面置中縮放 (本來只切右邊)*/
-	background-attachment: fixed;
+	background-attachment: fixed; /*固定背景*/
 }	
 #message_form{
 	width: 35%;

@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getData()">取得Json資料</button>
+    <div id="showData">顯示資料區</div>
+
+     <script>
+        function getData(){
+            fetch('./weather.json').then(function(response){
+              return response.json();
+            }).then(function(data){ 
+                      //已經取得資料，將資料顯示在畫面上
+                      //把取得showData的id位置給ans (簡化每次都要打一大串)
+                      let ans = document.querySelector('#showData');
+                      //清空顯示區的資料
+                      ans.innerHTML = "";
+                      for( let i = 0; i < data.length ; i++){
+                          let weather = data[i];
+    
+                         ans.innerHTML = '<div>';
+                       for(let j = 0 ; j<weather.result.fields.length; j++){
+                          ans.innerHTML += weather.result.fields[j].id + "未寫完"
+                       }
+                          ans.innerHTML += '</div>';
+                      }
+                });
+            }
+     </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 其餘參數 -->
+    <script>
+        //建立一個函式(帶有其餘參數)
+        function demo(a,b,...data){
+            console.log(a, b);   //5 4
+            console.log(data);   //(3) [3, 2, 1]
+        }
+        //呼叫函式
+        demo(5, 4, 3, 2, 1);
+
+        //物件的解構賦值
+            //依順序取的物件成員
+            let { x,y,...obj}= {x:3, y:4, g:5, p:6 ,m:7};
+            console.log(x, y);  //3 4
+            console.log(obj);  //{g: 5, p: 6, m: 7}
+            //依指定物件成員取得
+            let { g,m,...data2}= {x:3, y:4, g:5, p:6 ,m:7};
+            console.log(g, m);  //5 7
+            console.log(data2);//{x: 3, y: 4, p: 6}
+
+
+    </script>
+</body>
+</html>

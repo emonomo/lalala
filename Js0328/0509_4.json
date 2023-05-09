@@ -1,0 +1,20 @@
+[
+
+    {
+        "prodName": "Acer筆電",
+        "prodPrice": "25,800",
+        "prodDesc": "商用機"
+    },
+
+    {
+        "prodName": "Asus筆電",
+        "prodPrice": "32,800",
+        "prodDesc": "電競機"
+    },
+
+    {
+        "prodName": "Mac筆電",
+        "prodPrice": "43,800",
+        "prodDesc": "很貴機"
+    }
+]

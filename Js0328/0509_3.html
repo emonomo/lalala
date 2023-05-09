@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 運用函式參數+其餘參數 -->
+    <!-- 撰寫一個可以將參數合計的函式 -->
+<script>
+    //<!-- 建立函式 -->
+    function add(x,y,...nums){
+        let tot = x+y;
+        console.log("只有前面x+y(沒進入迴圈):"+ tot);
+ 
+        for(let i =0; i <nums.length;i++){
+          tot = tot + nums[i];
+        }
+        console.log("加上 後面nums的加總(進入迴圈):"+ tot);
+    }
+   //<!-- 呼叫函式 -->
+    add(3, 4);  //7
+    add(1,2,3,4);  //10
+    add(9,8,7,6,5);  //35
+
+console.log('---------------------------------');
+
+// 沒有預設數值的寫法 (彈性更大)
+    function add(...nums){
+        let tot = 0;
+        for(let i =0; i <nums.length;i++){
+          tot = tot + nums[i];
+        }
+        console.log("合計為 =>" + tot);
+    }
+
+    //<!-- 呼叫函式 -->
+    add(3, 4);  //7
+    add(1,2,3,4);  //10
+    add(9,8,7,6,5);  //35
+</script>
+</body>
+</html>
