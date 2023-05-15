@@ -72,7 +72,7 @@ img {
 	display: flex; /*flex有預設的各種屬性，包括水平*/
 	justify-content: space-between; /*space-between(貼齊start/end)*/
 	padding: 20px;
-	z-index: 1;
+	z-index: 100;
 }
 
 #topbar ul{
@@ -228,6 +228,18 @@ section{
 	color: #864c72;
 	text-decoration: underline;
 }
+@media (max-width:992px){ /* 平板的rwd */
+	#news .list_item:last-child{ 
+		/* 藏起來最後一個物件 */
+		display: none;
+	}
+}
+@media (max-width:576px){/* 手機的rwd */
+	#news .list_item:nth-child(n+2){ 
+		/* 藏起來第2個之後的物件(包括第二個) */
+		display: none;
+    }
+}
 
 
 /* service區 */
@@ -281,6 +293,23 @@ section{
 .service_4{
 	background-image: url('../images/pt_svc4.jpg');
 }
+@media (max-width:992px){
+	#service .list_box{
+		flex-direction: column;
+		height: 70vh;
+	}
+	#service .list_item{
+		margin: 2vh 0;
+	}
+	#service .list_item:nth-child(n+3){
+		display: none;
+	}
+}
+@media (max-width:576px){
+	#service .list_item:nth-child(n+2){
+		display: none;
+	}
+}
 
 
 /* video區 */
@@ -292,6 +321,19 @@ section{
 	height: 70vh;
 	margin-top: 30px;
 }
+
+@media (max-width:992px) { /* rwd  992px以下都套用*/
+	#video{
+		height: auto;
+		padding: 5vh 0;
+	}
+	#video video{
+		width: 85%;
+		height: auto; /* 用auto會自動根據寬度覆蓋前面的height */
+		
+	}
+}
+
 /* About區 */
 #about{
 	position: relative; /*設定position，video會認他為爸(relative沒有座標位置 會正常排列*/
@@ -358,7 +400,22 @@ section{
   } 
   我沒有右下的角 */
   
+  @media (max-width:992px){
+	#about div{
+		width: 85%;
+	}
+	#about p{
+		font-size: 1.1rem;
+		line-height: 1.5rem;
+	}
+}
+	  
+	@media (max-width:576px){
+		#about div{
+			padding: 0 20px;
+		}
 
+}
 
 /* contact區 */
 #contact{
@@ -369,6 +426,44 @@ section{
 }	
 #message_form{
 	width: 35%;
+}
+  
+@media (max-width:992px){
+	#message_form{
+		width: 70%;
+	}
+	#message_form label{
+		margin: 30px 0 10px;
+	}
+	#message_form input,
+	#message_form textarea{
+      padding: 20px 25px;
+   }
+   ::placeholder{
+	font-size: 1rem;
+   }
+   #message_form button{
+	margin: 30px auto;
+   }
+}
+
+@media (max-width:576px){
+	#message_form{
+		width: 65%;
+	}
+	#message_form label{
+		margin: 30px 0 10px;
+	}
+	#message_form input,
+	#message_form textarea{
+      padding: 10px 15px;
+   }
+   ::placeholder{
+	font-size: 1rem;
+   }
+   #message_form button{
+	margin: 20px auto;
+   }
 }
 #message_form > *{
     display: block;
@@ -432,7 +527,7 @@ section{
 	/* text-transform: uppercase; */
 	height: 60px;
 	width: 50%;
-	margin: 50px auto;
+	margin: 30px auto;
 	/* opacity: 1; 
 	background-color: #ffffff;
 	border: 1px solid rgba(22, 76, 167, 0.6);*/
