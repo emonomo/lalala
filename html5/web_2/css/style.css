@@ -36,6 +36,11 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+/* 捲軸滑動效果 
+html,body{
+	scroll-behavior: smooth;
+}
+*/
 body {
 	line-height: 1;
     font-family: /*⻄文*/ -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
@@ -89,6 +94,7 @@ img {
 	display: block;
 	width: 35px;
 	height: 35px;
+	margin: 0 5px;
 }
 .icon-fb {
 	background-image: url(../images/icon-fb.svg);
@@ -150,6 +156,120 @@ img {
     width: 100%;
 	transition: .35s ease-in-out; /* 轉場動畫 */
 }
+@media(min-width: 577px){/* min-width才不會在桌機版出現漢堡按鈕 */
+	.hamburger{
+		display: none;
+	}
+}
+
+@media(max-width: 576px){
+	#topbar ul{
+		justify-content: center; 
+	}
+	.icon a {
+		margin: 0 3px;
+	}
+	.menu{
+		flex-direction: column;
+		align-items: center;
+		/* 取消玻璃擬態效果 */
+		background-color: transparent;
+		backdrop-filter:none;
+		border: none;
+		box-shadow: none;
+	}
+	.menu a{
+		color: #3c393b;
+		padding: 15px 10px;
+	}
+
+	/* 漢堡按鈕  */
+.nav_box {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+  }
+  /* .navigation {
+	display: flex;
+	justify-content: space-between;
+  } */
+  .hamburger {
+	/*inline-block未設寬高時，根據內容物(.bar)自動抓尺寸 */
+	display: inline-block;
+	cursor: pointer;
+	/*取消button的預設樣式 */
+	background-color: transparent;  
+	border: none;
+	padding: 0;
+  }
+  
+  .bar {
+	/* span本是行內元素(無法更改尺寸)，所以改為display: block;*/
+	display: block;
+	width: 25px;
+	height: 3px;
+	margin: 5px auto;
+	background-color: #333;
+	transition: all 0.3s ease-in-out;
+  }
+  
+  .hamburger.is-active .bar:nth-child(2) {
+	opacity: 0;
+  }
+  
+  .hamburger.is-active .bar:nth-child(1) {
+	transform: translateY(8px) rotate(45deg);
+  }
+  
+  .hamburger.is-active .bar:nth-child(3) {
+	transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  .navigation {
+	padding: 20px;
+	display: none;
+	position: absolute;
+	border-radius: 5px;
+	top: 30px;
+	right: 0;
+	/*玻璃擬態(毛玻璃)*/
+	backdrop-filter: blur(12px); /*背景模糊濾鏡 (要再搭配透明度)*/
+	background-color: rgba(241, 230, 229, 0.2);  /*顏色的最後一項是透明度*/
+	border:2px solid rgba(255, 255, 255,0.1); /*改變input邊框的預設樣式*/
+	box-shadow: inset -1px -1px 1px rgba(255, 255, 255,0.5), 1px 1px 5px rgba(2, 2, 2,0.2);
+	
+	animation: navigation 0.35s both;
+  }
+  
+  @keyframes navigation {
+	from {
+	  opacity: 1;
+	}
+  
+	to {
+	  opacity: 0;
+	}
+  }
+  
+  .navigation.show {
+	display: block;
+	animation: show 0.35s both;
+  }
+  
+  @keyframes show {
+	from {
+	  opacity: 0;
+	}
+  
+	to {
+	  opacity: 1;
+	}
+  }
+  
+}
+
+
 /* 主要內容共用 */
 
 main > * {       /* 取得<main>第一層所有元素 */
@@ -189,6 +309,7 @@ section{
 .list_item h2{
 	font-family: 'KasseFLFBold', sans-serif;
 }
+
 
 /* news區  */
 #news{
@@ -595,4 +716,18 @@ footer{
 	background-color: #f2edf0;
 	padding: 50px;  /*  內距包含背景色 */
 	text-align: center; 
+}
+#gotop{
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	width: 50px;
+	height: 50px;
+	z-index: 999;
+	background-color: rgba(182, 162, 162, .5);
+	border-radius: 25px;
+
+	font-size: 2.2rem;
+	line-height: 50px;
+	text-align: center;
 }

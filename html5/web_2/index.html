@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>花室</title>
     <link rel="icon" href="favicon.ico">
-  
+
+    <link rel="stylesheet" href="css/all.min.css">  <!-- fontawesome css -->
     <link rel="stylesheet" href="css/carousel.css">  <!-- codepan上摳下來的換圖輪播 -->
     <!-- 自訂的css一定要放在最下面，權重最重 -->
     <link rel="stylesheet" href="css/style.css">
@@ -21,23 +22,30 @@
           <img src="./images/logo_b.svg" alt="花室logo">
         </a>
      </h1>
-
-     <nav>
+<div class="nav_box">
+  <!-- 漢堡按鈕 -->
+  <button class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+  <!-- 選單列 -->
+     <nav class="navigation">
         <ul class="icon">
             <li><a href="https://zh-tw.facebook.com/" class ="icon-fb" target="_blank"></a></li>
             <li><a href="https://www.instagram.com/facebook/" class ="icon-ig" target="_blank"></a></li>
             <li><a href="https://creator.line.me/zh-hant/" class ="icon-line" target="_blank"></a></li>
         </ul>
         <ul class="menu">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">NEWS</a></li>
-            <li><a href="#">SERVICE</a></li>
-            <li><a href="#">VIDEO</a></li>
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <li><a href="#banner">HOME</a></li>
+            <li><a href="#news">NEWS</a></li>
+            <li><a href="#service">SERVICE</a></li>
+            <li><a href="#video">VIDEO</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
         </ul>
      </nav>
-
+</div>
    </header>
    <!-- 主要內容區 -->
      <main>
@@ -210,7 +218,10 @@
          
      </main>
      <!-- 頁尾區 -->
-      <footer>copyright © 2023 芮芮花室.All rights reserved.</footer>
+      <footer>
+        copyright © 2023 芮芮花室.All rights reserved.
+        <div id="gotop"><i class="fa-solid fa-angle-up"></i></div>
+      </footer>
       <!-- jquery core3.7.0，一定要放在最上面，先被執行 -->
       <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
       <!-- js 一定要放在最下面，最後被執行-->
