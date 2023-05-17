@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>隨堂練習</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="images/favicon.ico" rel="shortcut icon">
+  <meta charset="UTF-8">
+  <script src="/javascripts/vendor.js"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"
+    integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body class="bg-lighter">
+  <div class="container main my-5">
+    <div class="row">
+      <main class="col post">
+        <!-- 章節標題 -->
+        <div class="mb-4">
+          <h1 class="mt-0 text-muted">隨堂練習</h1><small>檔名：<code>react-7.html</code></small>
+        </div>
+        <!-- 練習開始 -->
+        <!-- 圖片連結
+            https://images.unsplash.com/photo-1520013573795-38516d2661e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1536&q=80
+            https://images.unsplash.com/photo-1618038483079-bfe64dcb17f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80
+            https://images.unsplash.com/photo-1546552696-7d5f4e89b0e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80
+          -->
+
+
+          <!-- bootstrap card 元件:
+            <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div> -->
+        <div id="root"></div>
+
+        <!-- 練習結束 -->
+        <script type="text/babel">
+          function App(){
+            const products = {
+                  pro1:{
+                    imgUrl:' https://images.unsplash.com/photo-1520013573795-38516d2661e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1536&q=80',
+                    title:'商品1',
+                    price:500,
+                    linkUrl:'https://tw.dictionary.search.yahoo.com/search?p=brush'
+                  },
+                  pro2:{
+                    imgUrl:' https://images.unsplash.com/photo-1618038483079-bfe64dcb17f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+                    title:'商品2',
+                    price:500,
+                    linkUrl:'https://tw.dictionary.search.yahoo.com/search;_ylt=AwrtjHHZjmRkVgQGjr19rolQ;_ylc=X1MDMTM1MTIwMDM4MQRfcgMyBGZyAwRmcjIDc2ItdG9wBGdwcmlkA3JvMUs0T0ZtUVEua0ZDNjguUDFjVkEEbl9yc2x0AzAEbl9zdWdnAzEwBG9yaWdpbgN0dy5kaWN0aW9uYXJ5LnNlYXJjaC55YWhvby5jb20EcG9zAzAEcHFzdHIDBHBxc3RybAMwBHFzdHJsAzYEcXVlcnkDc3BvbmdlBHRfc3RtcAMxNjg0MzEyMTc3?p=sponge&fr2=sb-top'
+                  },
+                  pro3:{
+                    imgUrl:' https://images.unsplash.com/photo-1546552696-7d5f4e89b0e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+                    title:'商品3',
+                    price:500,
+                    linkUrl:'https://tw.dictionary.search.yahoo.com/search;_ylt=AwrtjHFxkGRkbDYGNWx9rolQ;_ylc=X1MDMTM1MTIwMDM4MQRfcgMyBGZyAwRmcjIDc2ItdG9wBGdwcmlkA3JvREtNUElUVE11ZGhtZW0xYm92WUEEbl9yc2x0AzAEbl9zdWdnAzEwBG9yaWdpbgN0dy5kaWN0aW9uYXJ5LnNlYXJjaC55YWhvby5jb20EcG9zAzAEcHFzdHIDBHBxc3RybAMwBHFzdHJsAzQEcXVlcnkDYmF0aAR0X3N0bXADMTY4NDMxMjIwMQ--?p=bath&fr2=sb-top'
+                  }
+            }
+            return<>
+                  {/*產生一列三欄(bootstrap)*/}
+             <div class="row row-cols-3">
+                   {/*商品一*/}
+                   <div class="col">
+                       <a href={products.pro1.linkUrl}  className="card">
+                        <img className="card-img-top object-fit" src={products.pro1.imgUrl}  alt="..." />
+                        <div className="card-body">
+                          <span className="text=dark">{products.pro1.title} </span>
+                          <span className="float-end">{products.pro1.price} </span>
+                        </div>
+                        </a>
+                   </div>
+                   {/*商品二*/}
+                   <div className="col">
+                       <a href={products.pro2.linkUrl} className="card">
+                        <img className="card-img-top object-fit" src={products.pro2.imgUrl}   alt="..." />
+                        <div className="card-body">
+                          <span className="text=dark">{products.pro2.title}</span>
+                          <span className="float-end">{products.pro2.price} </span>
+                        </div>
+                        </a>
+                   </div>
+                   {/*商品三*/}
+                   <div className="col">
+                       <a href={products.pro3.linkUrl} className="card">
+                        <img className="card-img-top object-fit" src={products.pro3.imgUrl}    alt="..." />
+                        <div className="card-body">
+                          <span className="text=dark">{products.pro3.title} </span>
+                          <span className="float-end">{products.pro3.price}</span>
+                        </div>
+                        </a>
+                   </div>
+              </div>
+            </>
+          }
+          // 渲染
+          ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+          </script>
+        <!-- 樣式設定 -->
+        <style>
+          .object-fit{object-fit:cover;}
+          .card-img-top {height: 250px;}
+          a.card{
+            text-decoration: none;
+            transition: transform .5s, box-shadow .5s;
+          }
+          a.card:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 0 10px rgba(0, 0, 0,0.2);
+            background-color: aliceblue;
+          }
+        </style>
+       
+      </main>
+    </div>
+  </div>
+
+  <link rel="stylesheet" href="/stylesheets/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</body>
+
+</html>
