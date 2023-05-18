@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>smoove jquery</title>
+
+    <style>
+        body{
+            margin: 0;
+        }
+        .banner,.footer{
+            width: 100%;     
+            text-align: center;
+            font-size: 3rem;
+            color: gray;
+            text-transform: uppercase;
+        }
+        .banner{
+            line-height: 100vh;
+            height: 100vh;
+            background-color: aliceblue;
+        }
+        .footer{
+            line-height: 200px;
+            height: 200px;
+            background-color: rgb(61, 81, 98);
+        }
+
+        .row{
+            display: flex;
+        }
+        .col{
+            height: 250px;
+            flex: 1;
+            background-color:lightgoldenrodyellow;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">a Title</div>
+<!-- 預設值:淡出淡入 -->
+    <div class="row">
+        <div class="col smoove"></div>
+        <div class="col smoove"></div>
+    </div>
+<!-- 旋轉載入 -->
+    <div class="row">
+        <div class="col smoove" data-move-x="-500px" data-rotate="90deg"></div>
+        <div class="col smoove" data-move-x="-200px" data-move-y="200px" data-rotate="45deg"></div>
+        <div class="col smoove" data-move-x="500px" data-rotate="-90deg"></div>
+    </div>
+<!-- 左右載入 -->
+    <div class="row">
+        <div class="col smoove" data-move-x="-200px" data-move-y="200px"></div>
+        <div class="col smoove" data-move-x="-100px" data-move-y="200px"></div>
+        <div class="col smoove" data-move-x="100px" data-move-y="200px"></div>
+        <div class="col smoove" data-move-x="200px" data-move-y="200px"></div>
+    </div>
+<!-- 翻轉載入 -->
+    <div class="row">
+        <div class="col smoove" data-move-x="-150%" data-rotate-y="-90deg"></div>
+        <div class="col smoove" data-move-x="150%" data-rotate-y="90deg"></div>
+    </div>
+    <div class="row">
+        <div class="col smoove_2"></div>
+        <div class="col smoove_2"></div>
+        <div class="col smoove_2"></div>
+        <div class="col smoove_2"></div>
+        <div class="col smoove_2"></div>
+    </div>
+
+    <div class="footer">footerrrrr</div>
+
+    <!-- jquery原始碼 -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- jquer smoove原始碼 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+     <!--啟用 jquery smoove -->
+    <script>
+     $('.smoove').smoove({
+        offset:'40%',
+        // moveX: '200px',
+        // moveY: '200px'
+     });
+     $('.smoove_2').smoove({
+        offset:'40%',
+        moveY: '100px',
+        moveZ:'-500px',
+        rotateX: '90deg'
+     });
+     </script>
+</body>
+</html>
