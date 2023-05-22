@@ -104,6 +104,7 @@ ul{
     z-index: 99;
 }
 .navbar-brand{
+    display: block;
     width: 150px;
 }
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show{
@@ -148,7 +149,7 @@ ul{
 }
 
 .icon li{
-   margin: 0 5;
+   margin: 0 5px;
 }
 
 /* main */
@@ -160,25 +161,24 @@ ul{
   flex: 1;
   background-image: url('../images/bg_s.jpg');
   background-size: 100% 100%;
-
   position: relative;
 }
 .food_pt figure{
     position: absolute;
 }
 #food_1{
-    width: 320px;
-    top: 60px;
+    width: 350px;
+    top: 80px;
     right: 1000px;
     /* animation: food_1 3s both infinite alternate; */
     animation: 3s both;
 }
 @keyframes food_1{
-    from { top: 60px;  right: 1000px}
-    to{ top: 60px;  right: -60px;}
+    from { top: 80px;  right: 1000px}
+    to{ top: 80px;  right: -60px;}
 }
 #food_2{
-    width: 220px;
+    width: 250px;
     top: 30px;
     left: -300px;
     /* animation: food_2 3s 1s both infinite alternate; */
