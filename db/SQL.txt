@@ -1,0 +1,38 @@
+/*顯示students全部資料*/
+select * from students
+
+/*查看前三筆資料*/
+select * from students LIMIT 3
+
+/*排序資料，預設為遞增->ASC*/
+select * from students order by cName
+
+/*排序資料，遞減->DESC*/
+select * from students order by cSex, cHeight desc
+
+/* 找出性別為女生的資料*/
+SELECT * FROM students WHERE cSex='F'
+
+/* 身高超過165，且體重超過50的男生 */
+SELECT * FROM students WHERE cHeight>=165 and cWeight>=50 and cSex='M'
+
+/* 使用運算產生 bmi */
+SELECT cID,cName,cHeight,cWeight, cWeight/((cHeight/100)*(cHeight/100)) AS bmi from students
+
+/* 合計英文分數*/
+SELECT SUM(score) as 英文合計 FROM scorelist WHERE course='英文'
+
+/* 使用GROUP By 子句，加總各科目的分數 */
+SELECT course, SUM(score) from scorelist GROUP BY course
+
+/* 各別取出學生資料檔與成績檔的資料 */
+SELECT students.cID,students.cName, scorelist.course, scorelist.score FROM students INNER JOIN scorelist ON students.cID = scorelist.cID;
+
+/* 所有同學的各科成績 */
+SELECT * from scorelist order by cID;
+
+/* 每個同學的合計（沒有使用別名） */
+SELECT scorelist.cID,students.cName, SUM(scorelist.score) AS 各科成績加總 from scorelist INNER JOIN students ON scorelist.cID = students.cID  GROUP BY scorelist.cID;
+
+/* 每個同學的合計（使用別名） */
+SELECT A.cID,B.cName, SUM(A.score) AS 各科成績加總 from scorelist AS A INNER JOIN students AS B ON A.cID = B.cID  GROUP BY A.cID;

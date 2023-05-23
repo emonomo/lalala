@@ -35,58 +35,52 @@
                     // 程式撰寫區
                     function App() {
                         // 資料抽離
-                        const products = {
-                            prod1: {
+                        const products = [
+                             {
                                 imageUrl: 'https://images.unsplash.com/photo-1520013573795-38516d2661e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1536&q=80',
                                 title: '商品1',
                                 price: 99,
                                 link: 'https://shopee.tw/'
                             },
-                            prod2: {
+                            {
                                 imageUrl: 'https://images.unsplash.com/photo-1618038483079-bfe64dcb17f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
                                 title: '商品2',
                                 price: 100,
                                 link: 'https://www.momoshop.com.tw/brand/Main.jsp'
                             },
-                            prod3: {
+                             {
                                 imageUrl: 'https://images.unsplash.com/photo-1546552696-7d5f4e89b0e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
                                 title: '商品3',
                                 price: 120,
                                 link: 'https://media.etmall.com.tw/sp/23485/m/index.html'
+                            },
+                            {
+                                imageUrl: 'https://images.unsplash.com/photo-1684619419581-39800cb71285?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80',
+                                title: '商品4',
+                                price: 555,
+                                link: 'https://media.etmall.com.tw/sp/23485/m/index.html'
                             }
-                        };
+                        ];
                         return <>
-                            <div class="row row-cols-3">
-                                {/*商品一*/}
-                                <div class="col">
-                                    <a href={products.prod1.link} target="_blank" className="card">
-                                        <img className="card-img-top object-fit" src={products.prod1.imageUrl} alt="..." />
-                                        <div class="card-body">
-                                            <span className="text-dark">{products.prod1.title}</span>
-                                            <span className="float-end">{products.prod1.price}</span>
+
+     {/*看這裡!!!!!!!!*/}                   
+                            <div className="row row-cols-3">
+                            {
+                                products.map((item, i)=>{
+                                    return <div className="col" key = {i}>   {/*key = {i} 陣列索引值代替key值，避免重複資料的內容*/}
+                                    <a href={item.link} target="_blank" className="card mt-5">
+                                        <img className="card-img-top object-fit" src={item.imageUrl} alt="..." />
+                                        <div className="card-body">
+                                            <span className="text-dark">{item.title}</span>
+                                            <span className="float-end">{item.price}</span>
                                         </div>
                                     </a>
-                                </div>
-                                {/*商品二*/}
-                                <div class="col">
-                                    <a href={products.prod2.link} target="_blank" className="card">
-                                        <img className="card-img-top object-fit" src={products.prod2.imageUrl} alt="..." />
-                                        <div class="card-body">
-                                            <span className="text-dark">{products.prod2.title}</span>
-                                            <span className="float-end">{products.prod2.price}</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                {/*商品三*/}
-                                <div class="col">
-                                    <a href={products.prod3.link} target="_blank" className="card">
-                                        <img className="card-img-top object-fit" src={products.prod3.imageUrl} alt="..." />
-                                        <div class="card-body">
-                                            <span className="text-dark">{products.prod3.title}</span>
-                                            <span className="float-end">{products.prod3.price}</span>
-                                        </div>
-                                    </a>
-                                </div>
+                                    </div>
+                                })
+                            }
+                            </div>
+  
+                               
                                 {/*商品二*/}
                                 {/*
                                 <div class="col">
@@ -112,7 +106,7 @@
                                     </a>
                                 </div>
                                 */}
-                            </div>
+                           
                         </>
                     }
                     ReactDOM.createRoot(document.getElementById('root')).render(<App />)
@@ -184,3 +178,24 @@
 </body>
 
 </html>
+
+<!-- // {/*商品二*/}
+// <div class="col">
+//     <a href={products.prod2.link} target="_blank" className="card">
+//         <img className="card-img-top object-fit" src={products.prod2.imageUrl} alt="..." />
+//         <div class="card-body">
+//             <span className="text-dark">{products.prod2.title}</span>
+//             <span className="float-end">{products.prod2.price}</span>
+//         </div>
+//     </a>
+// </div>
+// {/*商品三*/}
+// <div class="col">
+//     <a href={products.prod3.link} target="_blank" className="card">
+//         <img className="card-img-top object-fit" src={products.prod3.imageUrl} alt="..." />
+//         <div class="card-body">
+//             <span className="text-dark">{products.prod3.title}</span>
+//             <span className="float-end">{products.prod3.price}</span>
+//         </div>
+//     </a>
+// </div> -->

@@ -26,6 +26,125 @@
                 <div id="root"></div>
                 <script type="text/babel">
                     // 練習區
+                    //JSX 中的陣列方式
+
+                    const people = [
+                        {
+                            name: '小小',
+                           price:180,
+                           like: '抹茶'
+                        },
+                        {
+                            name: '知知',
+                            price:100,
+                            like: '點心'
+                        },
+                        {
+                            name: '西西',
+                            price:250,
+                            like: '麻花'
+                        }
+                    ];
+                //#2-3-1新增一個欄位，將價格打8折
+                    //一般作法
+                    // for (let i = 0; i <= people.lengh-1; i++){
+                    //     console.log(people[i].price*0.8)
+                    // }
+
+                    //陣列.forEach (內容，索引位置index)方法
+                    people.forEach((item,i) => {
+                        //新增一個欄位，將價格打8折
+                        item.newPrice = item.price*0.8;
+                    });
+                    console.log(people);
+
+                //#2-3-2  重新建立新的陣列
+                  //這寫法也常用
+                    //    const order = people.map((item,i) =>{
+                    //          return{
+                    //             price: item.price*0.8,
+                    //             title: item.like
+                    //          }
+                    //     }); 
+                   // 縮寫寫法: 把return{}大括號拿掉，後方{}的前後加上小括號
+                    const order = people.map((item,i) =>({
+                            price: item.price*0.8,
+                            title: item.like                   
+                    }));
+                    console.log(order); //{price: 144, title: '抹茶'}
+                                        //{price: 80, title: '點心'}
+                                        //{price: 200, title: '麻花'}
+                    console.log(people);//{name: '小小', price: 180, like: '抹茶', newPrice: 144}
+                                        //{name: '知知', price: 100, like: '點心', newPrice: 80}
+                                        //{name: '西西', price: 250, like: '麻花', newPrice: 200}
+                //#2-3-3  map使用時的注意事項
+                    //當直接回傳時，會出現umdefined
+                    //直接使用map時，會發生不符合條件的資料(undefined)也會產生出來
+                    const order2 = people.map((item,i) =>{
+                        if (item.price >= 150){
+                            return{
+                            price: item.price,
+                            title: item.like  
+                            }  
+                        }                             
+                    });                                  
+                    console.log(order2);//{price: 180, title: '抹茶'}
+                                        //undefined
+                                        //{price: 250, title: '麻花'}
+                    //解決會跑出undefined的資料~往下看
+
+                    //先過濾(filter)資料
+                    const filterOrder = people.filter((item)=>item.price >= 150);//當裡面的過濾條件只有一個 不須打{}
+                    //，再map
+                    const order3 = filterOrder.map((item,i) =>{
+                            return{
+                            price: item.price,
+                            title: item.like  
+                            }                     
+                    });      
+                    console.log(order3);//{price: 180, title: '抹茶'}
+                                        //{price: 250, title: '麻花'}
+
+                    //將 filter 與 map 縮寫  (這邊我有換行寫，也可以寫成一行就好，視覺的易讀性)    
+                    const order4 = people
+                    .filter((item)=>item.price >= 150)
+                    .map((item,i) =>({
+                        price: item.price,
+                        title: item.like                   
+                    }));                 
+                    console.log(order4);
+
+                //#2-3-4  map在React運用
+                    const App = () =>{
+                        const people = [
+                            {
+                                name: '小小',
+                                price:180,
+                                like: '抹茶'
+                            },
+                            {
+                                name: '知知',
+                                price:100,
+                                like: '點心'
+                            },
+                            {
+                                name: '西西',
+                                price:250,
+                                like: '麻花'
+                            }
+                        ];
+                        return <div>
+                            {/*使用 map 方法帶出 li 內容*/}
+                            <ul>
+                             { 
+                                people.map((item,i)=>{
+                                    return <li>{item.name}-喜歡-{item.like}</li>
+                                })
+                             }
+                            </ul>
+                        </div>
+                    }
+                    ReactDOM.createRoot(document.getElementById('root')).render(<App/>)
 
                 </script>
 

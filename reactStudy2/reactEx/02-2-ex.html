@@ -93,9 +93,10 @@
                             age:25
                         }
                     }
-                    let s1 = {};
-                    const { p1 } = people2;
-                    console.log(p1);
+                    //解構之後重新命名
+                    let p2 = {};
+                    const { p2:newPerson } = people2;   //把p2改名字
+                    console.log(newPerson);   //{name: 'vava', age: 10}
                   
 
                 //#2-5函式參數解構
