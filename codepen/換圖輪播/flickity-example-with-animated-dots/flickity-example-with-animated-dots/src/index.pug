@@ -1,0 +1,11 @@
+- var slides = 5;
+
+.pageslider.-no-transition-delay
+	each _, index in Array(slides)
+		figure.pageslider__slide
+			img(src!='//picsum.photos/1920/960?random&v=' + index)
+			figcaption.pageslider__slide__caption
+				span.pageslider__slide__title I'm the Title ##{index + 1}
+				span.pageslider__slide__text Subtitle, slightly longer than the title
+
+
