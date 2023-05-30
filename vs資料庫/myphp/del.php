@@ -7,12 +7,12 @@ include("conn.php");
 
         $sql_query = 'DELETE FROM students WHERE cID=?'; 
         $del_data = $db_link->prepare($sql_query);
-        $del_data -> bind_param('i',$_POST['cID']);
+        $del_data -> bind_param("i", $_POST["strID"]);
         $del_data-> execute();
         $del_data -> close();
         $db_link -> close();
         //重新導向主畫面 data.php
-        header('location:data.php');
+        header('Location:data.php');
     }
 
     //找出要修改的資料
@@ -85,12 +85,13 @@ include("conn.php");
             </tr>
             <tr>
                 <!-- 隱藏欄位 -->
-                <td colspan="2" allign="center">
+                <td colspan="2" align="center">
                     <!--隱藏欄位: 功能  -->
                     <input type="hidden" name="action" value="del">  
                      <!--隱藏欄位: 座號 -->
-                    <input name="cID" type="hidden" value="<?php echo $cid; ?>">  
+                    <input name="strID" type="hidden" value="<?php echo $cid ?>">  
                     <input type="submit" value="確認刪除">
+                    <!-- onclick="window.history.back();"回上一頁window.可省略 -->
                     <input type="button" value="取消刪除" onclick="histoty.back();">
                 </td>
             </tr>

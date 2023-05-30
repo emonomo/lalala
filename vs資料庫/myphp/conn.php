@@ -18,6 +18,6 @@
    }else{
         //成功
         // echo '連線成功';
-        $db_link->query("SET NAMES 'UTF8'");
+        $db_link->query("SET NAMES 'utf8'");
    }
 ?>
