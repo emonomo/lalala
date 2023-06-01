@@ -18,7 +18,11 @@
 <title>IKEA宜家</title>
 <!-- bootstrap@5.3.0 css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-<!-- 自己的css -->
+<!-- lightbox的css -->
+    <link rel="stylesheet" href="css/lightbox.min.css">
+<!-- jquery ui tabs的css -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <!-- 自己的css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -163,154 +167,236 @@
         </div>
       </nav>
  <main>
-   <!-- 縮寫 section>(div.food_pt>figure*2)+div.food_text>h2+p*2+a -->
+   <!-- 縮寫 section>(div.food_pt>a*2)+div.food_text>h2+p*2+a -->
    <section id="food">
     <div class="food_pt">
-        <figure id="food_1"><img src="images/food_1.png" alt=""></figure>
+        <figure href="" id="food_1"><img src="images/food_1.png" alt=""></figure>
         <figure id="food_2"><img src="images/food_2.png" alt=""></figure>
     </div>
     <div class="food_text">
         <h2>IKEA美食</h2>
-        <p>IKEA邀請你在逛店的過程中到餐廳細細品嚐各式瑞典風味餐點！完成購物後，不妨順道逛逛瑞典食品超市吧！提供美味、豐富多元、永續發展的食材。最後別忘了到美食小站來份美味熱狗、享受霜淇淋的好滋味！</p>
-        <p>瑞典美食外帶服務登場，除了瑞典餐廳，在美食小站也能買到瑞典肉丸等經典主餐！</p>
+        <figure>IKEA邀請你在逛店的過程中到餐廳細細品嚐各式瑞典風味餐點！完成購物後，不妨順道逛逛瑞典食品超市吧！提供美味、豐富多元、永續發展的食材。最後別忘了到美食小站來份美味熱狗、享受霜淇淋的好滋味！</figure>
+        <figure>瑞典美食外帶服務登場，除了瑞典餐廳，在美食小站也能買到瑞典肉丸等經典主餐！</figure>
         <a href="#">看美食小站專屬外帶菜單</a>
     </div>
    </section>
-   <!--縮寫: section.container>h2+div.row>div.col*26>(figure>img[src='images/product/pt_$.jpg'])+h3{product-$}+p{NT.9999} -->
+
+<!-- 最新商品 -->
+<section id="new" class="container">
+   <h2 class="title">最新商品</h2>
+
+   <div id="tabs">
+    <div id="tabs-1">
+      <!-- (figure>img)+div.content>h1+deta+div+p+details -->
+      <figure><img src="images/new_1.jpg" alt=""></figure>
+      <div class="content">
+        <h1>落地 / 閱讀燈, 鋁質</h1>
+        <data value="401.109.02">LERSTA</data>
+        <div>NT.599</div>
+        <p>附可調式燈臂，可依需求調整照明方向 可提供適合閱讀的集中式燈光</p>
+        <details>
+          <summary>商品尺寸</summary>
+          高度：131 公分 / 腳直徑：25 公分
+        </details>
+      </div>
+    </div>
+    <div id="tabs-2">
+      <figure><img src="images/new_2.jpg" alt=""></figure>
+      <div class="content">
+        <h1>折疊桌, 白色</h1>
+        <data value="401.109.02">NORDEN</data>
+        <div>NT.6,490</div>
+        <p>節省空間設計，難怪我們使用折疊桌的時間長達數個世紀；我們賦予這張桌子簡約的北歐風格，增加幾個抽屜，方便放置餐具和餐巾紙</p>
+        <details>
+          <summary>商品尺寸</summary>
+          高度：131 公分 / 腳直徑：25 公分
+        </details>
+      </div>
+    </div>
+    <div id="tabs-3">
+      <figure><img src="images/new_3.jpg" alt=""></figure>
+      <div class="content">
+        <h1>附蓋收納盒</h1>
+        <data value="401.109.02">RABBLA</data>
+        <div>NT.599</div>
+        <p>裝飾衣櫃內部空間或使開放式收納組合更具特色；柔軟的布質收納盒搭配竹蓋，呈現天然、溫暖風格，含多種尺寸可供選擇</p>
+        <details>
+          <summary>商品尺寸</summary>
+          高度：131 公分 / 腳直徑：25 公分
+        </details>
+      </div>
+    </div>
+    <div id="tabs-4">
+      <figure><img src="images/new_4.jpg" alt=""></figure>
+      <div class="content">
+        <h1>時鐘, 白色</h1>
+        <data value="401.109.02">STOMMA</data>
+        <div>NT.45</div>
+        <p>含靜音石英機芯，不會發出滴答聲 時間準確性高</p>
+        <details>
+          <summary>商品尺寸</summary>
+          高度：131 公分 / 腳直徑：25 公分
+        </details>
+      </div>
+    </div>
+    <div id="tabs-5">
+      <figure><img src="images/new_5.jpg" alt=""></figure>
+      <div class="content">
+        <h1>落地 / 閱讀燈, 鋁質</h1>
+        <data value="401.109.02">MULIG</data>
+        <div>NT.379</div>
+        <p>可放在家中任何地方，亦適用於陽台和浴室等潮溼的地方附塑膠底墊，可避免刮傷表面</p>
+        <details>
+          <summary>商品尺寸</summary>
+          高度：131 公分 / 腳直徑：25 公分
+        </details>
+      </div>
+    </div>
+    <ul>
+      <li><a href="#tabs-1"><img src="./images/new_1.jpg" alt=""></a></li>
+      <li><a href="#tabs-2"><img src="./images/new_2.jpg" alt=""></a></li>
+      <li><a href="#tabs-3"><img src="./images/new_3.jpg" alt=""></a></li>
+      <li><a href="#tabs-4"><img src="./images/new_4.jpg" alt=""></a></li>
+      <li><a href="#tabs-5"><img src="./images/new_5.jpg" alt=""></a></li>
+    </ul>
+  </div>
+</section>
+
+   <!--一開始的縮寫: section.container>h2+div.row>div.col*26>(a>img[src='images/product/pt_$.jpg'])+h3{product-$}+p{NT.9999} -->
    <section class="container" id="product">
-    <h2>所有商品</h2> 
-    <!-- col-12 col-md-4 col-lg-3 col-xl-2 -->
+    <h2 class="title">所有商品</h2> 
       <div class="row">
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_1.jpg" alt=""></figure>
-          <h3>product-1</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_2.jpg" alt=""></figure>
-          <h3>product-2</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_3.jpg" alt=""></figure>
-          <h3>product-3</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_4.jpg" alt=""></figure>
-          <h3>product-4</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_5.jpg" alt=""></figure>
-          <h3>product-5</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_6.jpg" alt=""></figure>
-          <h3>product-6</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_7.jpg" alt=""></figure>
-          <h3>product-7</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_8.jpg" alt=""></figure>
-          <h3>product-8</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_9.jpg" alt=""></figure>
-          <h3>product-9</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_10.jpg" alt=""></figure>
-          <h3>product-10</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_11.jpg" alt=""></figure>
-          <h3>product-11</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_12.jpg" alt=""></figure>
-          <h3>product-12</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_13.jpg" alt=""></figure>
-          <h3>product-13</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_14.jpg" alt=""></figure>
-          <h3>product-14</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_15.jpg" alt=""></figure>
-          <h3>product-15</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_16.jpg" alt=""></figure>
-          <h3>product-16</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_17.jpg" alt=""></figure>
-          <h3>product-17</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_18.jpg" alt=""></figure>
-          <h3>product-18</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_19.jpg" alt=""></figure>
-          <h3>product-19</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_20.jpg" alt=""></figure>
-          <h3>product-20</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_21.jpg" alt=""></figure>
-          <h3>product-21</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_22.jpg" alt=""></figure>
-          <h3>product-22</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_23.jpg" alt=""></figure>
-          <h3>product-23</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_24.jpg" alt=""></figure>
-          <h3>product-24</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_25.jpg" alt=""></figure>
-          <h3>product-25</h3>
-          <p>NT.9999</p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-          <figure><img src="images/product/pt_26.jpg" alt=""></figure>
-          <h3>product-26</h3>
-          <p>NT.9999</p>
-        </div>
+       <!--加上燈箱的縮寫 div.col-6.col-md-4.col-lg-3.col-xl-2*26>(a[href="images/product/pt_$.jpg" data-lightbox="product" data-title="商品 $"]>img[src='images/product/thumbs/pt_s_$.jpg'])+h3{product-$}+p{NT.9999} -->
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_1.jpg" data-lightbox="product" data-title="商品 1"><img src="images/product/thumbs/pt_s_1.jpg" alt=""></a>
+        <h3>product-1</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_2.jpg" data-lightbox="product" data-title="商品 2"><img src="images/product/thumbs/pt_s_2.jpg" alt=""></a>
+        <h3>product-2</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_3.jpg" data-lightbox="product" data-title="商品 3"><img src="images/product/thumbs/pt_s_3.jpg" alt=""></a>
+        <h3>product-3</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_4.jpg" data-lightbox="product" data-title="商品 4"><img src="images/product/thumbs/pt_s_4.jpg" alt=""></a>
+        <h3>product-4</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_5.jpg" data-lightbox="product" data-title="商品 5"><img src="images/product/thumbs/pt_s_5.jpg" alt=""></a>
+        <h3>product-5</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_6.jpg" data-lightbox="product" data-title="商品 6"><img src="images/product/thumbs/pt_s_6.jpg" alt=""></a>
+        <h3>product-6</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_7.jpg" data-lightbox="product" data-title="商品 7"><img src="images/product/thumbs/pt_s_7.jpg" alt=""></a>
+        <h3>product-7</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_8.jpg" data-lightbox="product" data-title="商品 8"><img src="images/product/thumbs/pt_s_8.jpg" alt=""></a>
+        <h3>product-8</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_9.jpg" data-lightbox="product" data-title="商品 9"><img src="images/product/thumbs/pt_s_9.jpg" alt=""></a>
+        <h3>product-9</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_10.jpg" data-lightbox="product" data-title="商品 10"><img src="images/product/thumbs/pt_s_10.jpg" alt=""></a>
+        <h3>product-10</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_11.jpg" data-lightbox="product" data-title="商品 11"><img src="images/product/thumbs/pt_s_11.jpg" alt=""></a>
+        <h3>product-11</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_12.jpg" data-lightbox="product" data-title="商品 12"><img src="images/product/thumbs/pt_s_12.jpg" alt=""></a>
+        <h3>product-12</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_13.jpg" data-lightbox="product" data-title="商品 13"><img src="images/product/thumbs/pt_s_13.jpg" alt=""></a>
+        <h3>product-13</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_14.jpg" data-lightbox="product" data-title="商品 14"><img src="images/product/thumbs/pt_s_14.jpg" alt=""></a>
+        <h3>product-14</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_15.jpg" data-lightbox="product" data-title="商品 15"><img src="images/product/thumbs/pt_s_15.jpg" alt=""></a>
+        <h3>product-15</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_16.jpg" data-lightbox="product" data-title="商品 16"><img src="images/product/thumbs/pt_s_16.jpg" alt=""></a>
+        <h3>product-16</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_17.jpg" data-lightbox="product" data-title="商品 17"><img src="images/product/thumbs/pt_s_17.jpg" alt=""></a>
+        <h3>product-17</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_18.jpg" data-lightbox="product" data-title="商品 18"><img src="images/product/thumbs/pt_s_18.jpg" alt=""></a>
+        <h3>product-18</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_19.jpg" data-lightbox="product" data-title="商品 19"><img src="images/product/thumbs/pt_s_19.jpg" alt=""></a>
+        <h3>product-19</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_20.jpg" data-lightbox="product" data-title="商品 20"><img src="images/product/thumbs/pt_s_20.jpg" alt=""></a>
+        <h3>product-20</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_21.jpg" data-lightbox="product" data-title="商品 21"><img src="images/product/thumbs/pt_s_21.jpg" alt=""></a>
+        <h3>product-21</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_22.jpg" data-lightbox="product" data-title="商品 22"><img src="images/product/thumbs/pt_s_22.jpg" alt=""></a>
+        <h3>product-22</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_23.jpg" data-lightbox="product" data-title="商品 23"><img src="images/product/thumbs/pt_s_23.jpg" alt=""></a>
+        <h3>product-23</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_24.jpg" data-lightbox="product" data-title="商品 24"><img src="images/product/thumbs/pt_s_24.jpg" alt=""></a>
+        <h3>product-24</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_25.jpg" data-lightbox="product" data-title="商品 25"><img src="images/product/thumbs/pt_s_25.jpg" alt=""></a>
+        <h3>product-25</h3>
+        <p>NT.9999</p>
+       </div>
+       <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <a href="images/product/pt_26.jpg" data-lightbox="product" data-title="商品 26"><img src="images/product/thumbs/pt_s_26.jpg" alt=""></a>
+        <h3>product-26</h3>
+        <p>NT.9999</p>
+       </div>
       </div>
 
    </section>
@@ -319,11 +405,19 @@
  <footer>Copyright @ 2023 IKEA .All RIght</footer>
 
  
- <script src="https://code.jquery.com/jquery-3.7.0.min.js"
- integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
 
     <!-- bootstrap@5.3.0 js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script src="./script.js"></script>
+   
+    <!-- jquery 原始檔只能用一個版本 -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!-- lightbox -->
+    <script src="./js/lightbox.min.js"></script>
+    <!--jquery ui tabs -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <!-- 自己的 -->
+    <script src="./js/script.js"></script>
 </body>
 </html>

@@ -167,6 +167,7 @@ ul{
     position: absolute;
 }
 #food_1{
+ 
     width: 350px;
     top: 80px;
     right: 1000px;
@@ -178,6 +179,7 @@ ul{
     to{ top: 80px;  right: -60px;}
 }
 #food_2{
+
     width: 250px;
     top: 30px;
     left: -300px;
@@ -226,7 +228,7 @@ ul{
     left: 125px; 
 }
 /* product */
-#product h2{
+.title{
     font-size: 2rem;
     font-weight: bold;
     border-left: #0152B9 10px solid;
@@ -234,23 +236,97 @@ ul{
     margin: 2rem 0 1rem;
     position: relative;
 }
-#product h2::before{
+.title::before{
     position: absolute;
     content: '';
     height: 2px;
-    width: 85%;
+    width: calc(100% - 15rem);  /* 線這樣調整才會有rwd */
     bottom: 5px;
     left: 15rem;
     background-color: #0152B9;
 }
 
-#product h2::after{
+.title::after{
     content: 'ALL';
     font-size: 1.5rem;
     margin-left: 1rem;
     color: #0152B9;
 }
 
+
+/* 最新商品 */
+#tabs > div{
+ display: flex;
+}
+#tabs > div > *{
+    flex: 1;
+    margin: 0 20px;
+}
+#tabs .content >*{
+    margin:15px 0 ;
+}
+#tabs .content h1{
+    font-size: 1.2rem;
+}
+#tabs .content data{
+    /* data試航內元素， 沒設定display: block; 下面的行內區塊會上來並排 */
+    display: block;  
+    font-size: 3rem;
+    border-left: #0152B9 10px solid;
+    padding-left: 1rem;
+}
+#tabs .content div{
+    /* 改成行內區塊 顏色才會和自等寬*/
+    display: inline-block;
+    font-size: 2.2rem;
+    line-height: 3.2rem;
+    background-color: #f9d615;
+    padding: 0 10px;
+    font-weight: bold;
+    box-shadow: 5px 5px 0 red;
+}
+
+
+/* jquery ui tabs ------------尚未調整完圖片裡底線問題---------!!*/
+.ui-tabs{
+    width:80%;
+    margin: 5vh auto;
+}
+
+ul.ui-tabs-nav{
+    display: flex;
+}
+.ui-widget-header{
+    border: none;
+    background: none;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover{
+    border: 1px solid rgb(59, 59, 59);
+    background: none;
+}
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active{
+        background: none;
+ }
+
+li.ui-tabs .ui-tabs-nav {
+    border-bottom-width: 1px;
+}
+li.ui-tabs-tab{
+    border-radius: 3px;
+}
+
+/* product */
 #product .row> * {
     padding: 30px 20px;
     text-align: center;
@@ -258,11 +334,17 @@ ul{
 #product .row> * > * {
     margin: 15px 0;
 }
+
 #product .row h3{
     font-size: 1.2rem;
     color: cadetblue;
 }
 
+
+
+#product .row p{
+    color:red;
+}
 
 
 /* footer */
