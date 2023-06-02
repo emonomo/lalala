@@ -1,0 +1,424 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    display: block;
+    width: 100%;
+}
+body{
+    line-height: 1;
+    font-family: 'Catamaran', sans-serif;
+    color: #fff;
+}
+
+
+/* 共用 */
+.btn{
+    display: inline-block;  /* 不會像block一長條 */
+    padding: 1.25rem 2.5rem;
+    background-color: #fff;
+    color: #070707;
+    border-radius: 2.5rem;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: .05rem;
+    border: transparent 2px solid;/* 這邊加透明邊框才不會在hover時動一下 */
+}
+.btn:hover{
+    border: #fff 2px solid;
+    background-color: #070707;
+    color: #fff;
+    transition: .55s;
+}
+
+/* banner */
+
+#banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(images/bg-pattern-logos.png),linear-gradient(#e70112 16%, #b20772 76%);
+
+    position: relative;
+    overflow: hidden;    /* 圖超過要藏起來 */
+}
+
+#banner::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: 200px;
+    background-color: #e70112;
+    clip-path: polygon(0 100%,100% 0,100% 100%, 0 100%);
+              /* 多邊形(左上角，右上角 ，右下角 ，左下角)*/
+}
+
+#banner .row{
+    display: flex;
+    width: 80%;
+}
+
+/* <!-- 文案 --> */
+#banner h2 span{
+    display: block;   /* 換行 */
+}
+
+#banner .col:first-child{
+    width: 29rem;  /*注意這個寫法，縮放時p就不會亂跑 */
+}
+
+#banner h2 span:first-child{
+    font-size: 1.75rem;
+}
+#banner h2 span:last-child{
+    font-size: 11rem;
+    font-weight: 900;
+}
+#banner p{
+    font-size: 1.3rem;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* <!-- 圖片 --> */
+/* banner-1 */
+#banner picture{
+    position: absolute;/* 會浮起來~~ */
+}
+.mario1{
+    width: 35%;
+    /* top: -5vh;
+    right: 20%;      這是最後動畫結束後 畫面上出現的位置*/
+    animation:mario1 12s ease-in-out infinite both ;  
+     /* 一個banner 進來約2s、停留2s  =>共4s ，3個banner*4s =12s */
+}
+/* 0%相當於from  10%在這裡是指12s的10% => 約為1.2s(?) 100%相當於to*/
+@keyframes mario1{
+    0%{
+        top: 100vh;
+        right: 20%;
+        opacity: 0;
+    }
+    10%{
+        top: -5vh;
+        right: 20%;
+        opacity: 1;
+    }
+    20%{
+        top: -5vh;
+        right: 20%;
+        opacity: 1;
+    }
+    30%{/* (12s裡的30% 開始跑出去) */
+        top: 100vh;   
+        right: 20%;
+        opacity: 0; 
+    }
+    100%{
+        top: 100vh;
+        right: 20%;
+        opacity: 0;
+    }
+}
+.luigi{
+    width: 20%;
+    /* top: 20vh;
+    right: 5%; */
+    animation: luigi 12s .35s  ease-in-out infinite both ;  /*12s是動畫秒數， .35s 是delay */
+}
+@keyframes luigi{
+    0%{
+        top: 100vh;
+        right: 5%;
+        opacity: 0;
+    }
+    10%{
+        top: 20vh;
+        right: 5%;
+        opacity: 1;
+    }
+    20%{
+        top: 20vh;
+        right: 5%;
+        opacity: 1;
+    }
+    30%{
+        top: 100vh;
+        right: 5%;
+        opacity: 0;
+    }
+    100%{
+        top: 100vh;
+        right: 5%;
+        opacity: 0;
+    }
+}
+.brick{
+    width: 40%;
+    /* top: 10vh;
+    right: -4%; */
+    animation:brick 12s .45s  ease-in-out infinite both ;  
+}
+@keyframes brick{
+    0%{
+        top: 10vh;
+        right: -100%;
+        opacity: 0;
+    }
+    10%{
+        top: 10vh;
+        right: -4%;
+        opacity: 1;
+    }
+    20%{
+        top: 10vh;
+        right: -4%;
+        opacity: 1;
+    }
+    30%{
+        top: 10vh;
+        right: -100%;
+        opacity: 0;
+    }
+    100%{
+        top: 10vh;
+        right: -100%;
+        opacity: 0;
+    }
+}
+/* banner-2 */
+.mario2{
+    width: 32%;
+    animation:mario2 12s 4s ease-in-out infinite both ;
+}
+@keyframes mario2{
+    0%{
+        top: 100vh;
+        right: 25%;
+        opacity: 0;
+    }
+    10%{
+        top: 10vh;
+        right: 25%;
+        opacity: 1;
+    }
+    20%{
+        top: 10vh;
+        right: 25%;
+        opacity: 1;
+    }
+    30%{
+        top: 100vh;
+        right: 25%;
+        opacity: 0;
+    }
+    100%{
+        top: 100vh;
+        right: 25%;
+        opacity: 0;
+    }
+}
+.peach{
+    width: 17%;
+    animation:peach 12s 4.35s ease-in-out infinite both ;
+}
+@keyframes peach{
+    0%{
+        top: 100vh;
+        right: 17%;
+        opacity: 0;
+    }
+    10%{
+        top: 25vh;
+        right: 17%;
+        opacity: 1;
+    }
+    20%{
+        top: 25vh;
+        right: 17%;
+        opacity: 1;
+    }
+    30%{
+        top: 100vh;
+        right: 17%;
+        opacity: 0;
+    }
+    100%{
+        top: 100vh;
+        right: 17%;
+        opacity: 0;
+    }
+}
+.pipe{
+    width: 20%;
+    animation:pipe 12s 4.45s ease-in-out infinite both ;
+}
+@keyframes pipe{
+    0%{
+        top: 100vh;
+        right: 2%;
+        opacity: 0;
+    }
+    10%{
+        top: 5vh;
+        right: 2%;
+        opacity: 1;
+    }
+    20%{
+        top: 5vh;
+        right: 2%;
+        opacity: 1;
+    }
+    30%{
+        top: 100vh;
+        right: 2%;
+        opacity: 0;
+    }
+    100%{
+        top: 100vh;
+        right: 2%;
+        opacity: 0;
+    }
+}
+/* banner-3 */
+.mario3{
+    width: 41%;
+    animation:mario3 12s 8s ease-in-out infinite both ;
+}
+@keyframes mario3{
+    0%{
+        top: 100vh;
+        right: 15%;
+        opacity: 0;
+    }
+    10%{
+        top: 15vh;
+        right: 15%;
+        opacity: 1;
+    }
+    20%{
+        top: 15vh;
+        right: 15%;
+        opacity: 1;
+    }
+    30%{
+        top: 100vh;
+        right: 15%;
+        opacity: 0;
+    }
+    100%{
+        top: 100vh;
+        right: 15%;
+        opacity: 0;
+    }
+}
+.toad{
+    width: 12%;
+    animation:toad 12s 8.35s ease-in-out infinite both ;
+}
+@keyframes toad{
+    0%{
+        top: 100vh;
+        right: 14%;
+        opacity: 0;
+    }
+    10%{
+        top: 40vh;
+        right:14%;
+        opacity: 1;
+    }
+    20%{
+        top: 40vh;
+        right:14%;
+        opacity: 1;
+    }
+    30%{
+        top: 100vh;
+        right: 14%;
+        opacity: 0;
+    }
+    100%{
+        top: 100vh;
+        right: 14%;
+        opacity: 0;
+    }
+}
+.star{
+    width: 22%;
+    animation:star 12s 8.45s ease-in-out infinite both ;
+}
+@keyframes star{
+    0%{
+        top: 100vh;
+        right: 2%;
+        opacity: 0;
+    }
+    10%{
+        top: 15vh;
+        right: 2%;
+        opacity: 1;
+    }
+    20%{
+        top: 15vh;
+        right: 2%;
+        opacity: 1;
+    }
+    30%{
+        top: 100vh;
+        right: 2%;
+        opacity: 0;
+    }
+    100%{
+        top: 100vh;
+        right: 2%;
+        opacity: 0;
+    }
+}
+/* main */
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* news */
+#news{
+    background-color: #e70112;
+ }
+.list-box{
+    display: flex;
+    width: 75%;
+}
+.card-item{
+    position: relative;
+    flex: 1;
+    margin: 30px;
+    background-image: repeating-linear-gradient(-45deg, #a0111b,#302f2f 18px ,#2a2922,#2a2922 12px);
+    border-radius: 15px;
+    padding: 25px;
+}
+
+#news .scenes{
+  box-shadow: 0 0 40px -10px rgba(7, 7, 7);
+}
+
+#news .role{
+    position: absolute;
+    top: 0;
+    left:10%;
+    width: 80%;
+}
+#news .card-item:hover .scenes{
+   transform: perspective(600px) rotateX(30deg) skew(-20deg);
+}
