@@ -319,7 +319,7 @@ html .ui-button.ui-state-disabled:active{
         background: none;
  }
 
-li.ui-tabs .ui-tabs-nav {
+.ui-tabs .ui-tabs-nav li{
     border-bottom-width: 1px;
 }
 li.ui-tabs-tab{
