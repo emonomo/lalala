@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+    @charset "UTF-8";
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&display=swap');
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+    }
+    
+    img{
+        display: block;
+        width: 100%;
+    }
+    
+    body{
+        display: flex;
+        line-height: 1.4;
+        font-family: 'Merriweather', sans-serif;
+        color: #ffffff;
+    }
+    .container{
+        overflow: hidden;
+    }
+    .item{
+       float: left;
+       position: relative;
+    }
+    .item .txt p{
+        padding-top: 5%;
+        font-size: .5rem;
+  }
+    /*第一個item*/
+    .item:first-child{
+        width: 50%;
+    }
+    /*第一個item之後的所有item*/
+    .item:first-child~.item{
+        width: 25%;
+    }
+
+    .item .txt{
+        position: absolute;
+        top:0;
+        left: 0;
+        width:100%;
+        height: 100%;
+        padding: 10%;
+        box-sizing: border-box;
+        text-align: center;
+        background: rgba(0, 0, 0,.5);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        transform: scale(0);
+        transition: .5s .2s;
+        opacity: 0;
+    }
+    .item:hover .txt{
+        transform: scale(1);
+        opacity: 1;
+    }
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <img src="https://picsum.photos/id/312/500/500" alt="">
+            <div class="txt">
+                <h3>THIS IS MEME</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptatem voluptatibus cumque molestias consequatur impedit?</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/id/325/500/500" alt="">
+            <div class="txt">
+                <h3>THIS IS MEME</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptatem voluptatibus cumque molestias consequatur impedit?</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/id/223/500/500" alt="">
+            <div class="txt">
+                <h3>THIS IS MEME</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptatem voluptatibus cumque molestias consequatur impedit?</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/id/145/500/500" alt="">
+            <div class="txt">
+                <h3>THIS IS MEME</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptatem voluptatibus cumque molestias consequatur impedit?</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/id/258/300/300" alt="">
+            <div class="txt">
+                <h3>THIS IS MEME</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptatem voluptatibus cumque molestias consequatur impedit?</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

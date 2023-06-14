@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+img{
+    display: block;
+    width: 100%;
+}
+
+html,
+body{
+    align-items: center;
+    background-color: rgb(105, 109, 128);
+}
+
+body{
+    display: flex;
+    line-height: 1.4;
+    font-family: 'Merriweather', sans-serif;
+    color: #fff;
+}
+        .container{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .item{
+            margin: 10% 0;
+            display: flex;
+            align-items: center;
+            
+        }
+        .item .pic{
+          width: 55%;
+          /* 優先配置 */   
+          flex-shrink: 0;
+        }
+        .item .txt{
+           width: 55%;
+           flex-shrink: 0;
+           padding: 2.5% 5%;
+
+           position: relative;
+           z-index: 5;
+        }
+        .item .txt h2{
+           font-size: 1rem;
+        }
+        .item .txt p{
+           font-size: .8rem;
+        }
+        .item > :first-child{
+            margin-right: -10%;
+        }
+        /*指定不同item的文字區間顏色*/
+        .item:nth-child(1) .txt{
+            background-color: rgb(162, 182, 177 ,.8);
+        }
+        .item:nth-child(2) .txt{
+            background-color: rgb(155, 189, 181 ,.8);
+        }
+        .item:nth-child(3) .txt{
+            background-color: rgb(135, 182, 171 ,.8);
+        }
+        .item:nth-child(4) .txt{
+            background-color: rgb(120, 180, 166 ,.8);
+        }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="item">
+        <div class="pic">
+            <img src="https://picsum.photos/id/254/500/300" alt="">
+        </div>
+        <div class="txt">
+            <h2>THIS IS A STAR</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi earum fugit veniam vitae ad speriores quod maiores molestiae illo saepe?</p>
+        </div>
+    </div>
+    <div class="item">
+        <div class="txt">
+            <h2>THIS IS A STAR</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi earum fugit veniam vitae ad speriores quod maiores molestiae illo saepe?</p>
+        </div>
+        <div class="pic">
+            <img src="https://picsum.photos/id/240/500/300" alt="">
+        </div>
+
+    </div>
+    <div class="item">
+        <div class="pic">
+            <img src="https://picsum.photos/id/144/500/300" alt="">
+        </div>
+        <div class="txt">
+            <h2>THIS IS A STAR</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi earum fugit veniam vitae ad speriores quod maiores molestiae illo saepe?</p>
+        </div>
+    </div>
+    <div class="item">
+        <div class="txt">
+            <h2>THIS IS A STAR</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi earum fugit veniam vitae ad speriores quod maiores molestiae illo saepe?</p>
+        </div>
+        <div class="pic">
+            <img src="https://picsum.photos/id/135/500/300" alt="">
+        </div>
+    </div>
+</div>
+</body>
+</html>
