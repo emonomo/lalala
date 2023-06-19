@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+img{
+    display: block;
+    width: 100%;
+}
+
+html,
+body{
+    height: 100%;
+    align-items: center;
+    background-color: rgb(56, 50, 40);
+}
+
+body{
+    display: flex;
+    line-height: 1.4;
+    font-family: 'Merriweather', sans-serif;
+    color: #fff;
+}
+
+    .container{
+        width: 1200px;
+        margin: auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .item{
+
+        width: 370px;
+        margin:15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        text-align: center;
+
+        border: 1px solid #fff;
+
+        /* transform: translateY(0px);  可略*/
+        transition: .5s;
+    }
+    .item img{
+        height: auto;
+        vertical-align: top;  /*拿掉html5圖片下方預設的間距*/
+    }
+
+    .item .txt h2{
+       margin: .5rem 0;
+       padding: .5rem 0;
+    } 
+
+    .item .txt{
+        padding: 20px;
+        background: linear-gradient(rgb(222, 174, 116),rgb(255, 211, 218));
+        position: relative;
+    }  
+    /*製作倒三角形  _文字框之前*/
+    .item .txt::before{
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        top: 0;
+        left: 0;
+        border-top: 60px solid transparent;
+        border-left: 184px solid rgb(222, 174, 116);
+        border-right: 184px solid rgb(222, 174, 116);
+        transform: translateY(-100%);  /* 三角形往上移動一樣的高度 */
+    }
+    .item:hover{
+        transform: translateY(-50px);
+    }
+
+    .item:hover .txt{
+        background: linear-gradient(rgb(235, 168, 86),rgb(253, 200, 209));
+    } 
+    .item:hover .txt::before{
+        border-left: 184px solid rgb(235, 168, 86);
+        border-right: 184px solid rgb(235, 168, 86);
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="item">
+        <img src="https://picsum.photos/id/38/300/300" alt="">
+        <div class="txt">
+            <h2>THIS IS TITLE</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis error illum libero natus ab dolorum eum reprehenderit doloribus quidem doloremque!</p>
+        </div>
+    </div>
+    <div class="item">
+        <img src="https://picsum.photos/id/35/300/300" alt="">
+        <div class="txt">
+            <h2>THIS IS TITLE</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis error illum libero natus ab dolorum eum reprehenderit doloribus quidem doloremque!</p>
+        </div>
+    </div>
+    <div class="item">
+        <img src="https://picsum.photos/id/12/300/300" alt="">
+        <div class="txt">
+            <h2>THIS IS TITLE</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis error illum libero natus ab dolorum eum reprehenderit doloribus quidem doloremque!</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

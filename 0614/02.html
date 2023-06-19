@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+img{
+    display: block;
+    width: 100%;
+}
+body{
+    line-height: 1;
+    font-family: 'Merriweather', serif;
+    color: aliceblue;
+}
+.wrap{
+    width: 100%;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+}
+.wrap .item{
+    width: 45%;
+    margin: 0 1%;
+    /* 以目前item為主的定位 */
+    position: relative;
+}
+
+.wrap .item img{
+    vertical-align: top;
+}
+
+.wrap .item .txt{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, .7);
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.wrap .item:hover .txt{
+    opacity: 1;   
+}
+
+.wrap .item .txt h2::after{
+    content: "";
+    background-color: aliceblue;
+    width: 0%;
+    height: 2px;
+    display: block;
+    margin: .8rem 0;
+
+    transition: width .5s .3s;
+}
+
+.wrap .item:hover .txt h2::after{
+  width: 100%;
+}
+
+.wrap .item .txt p{
+    font-size: 1.2rem; 
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <div class="item">
+        <img src="https://picsum.photos/id/242/500/400" alt="">
+        <div class="txt">
+            <h2>THIS IS TITLE</h2>
+            <p>Lorem ipsum dolor sit amet</p>
+       </div>
+    </div>
+    <div class="item">
+        <img src="https://picsum.photos/id/255/500/400" alt="">
+        <div class="txt">
+            <h2>THIS IS TITLE</h2>
+            <p>Lorem ipsum dolor sit amet</p>
+       </div>
+    </div>
+</div>
+
+</body>
+</html>
