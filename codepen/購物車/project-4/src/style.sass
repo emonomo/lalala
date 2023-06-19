@@ -1,0 +1,240 @@
+$color-light-green: #B9C997
+$color-dark-green: #616A4D
+$color-white: #F6F6F5
+$color-pink: #FF5C7D
+
+@mixin size($w, $h)
+  width: $w
+  height: $h
+*
+  position: relative
+  vertical-align: top
+  // border: 1px solid #000
+  font-family: 'Montserrat', arial,'Noto Sans TC'
+  transition-duration: .5s
+html, body
+  +size(100%, 100%)
+  margin: 0
+  padding: 0
+  display: flex
+  justify-content: center
+  align-items: top
+  background-color: #ddd
+.phone
+  +size(400px, 750px)
+  margin-top: 20px
+  border-radius: 50px
+  border: solid 10px #333
+  box-shadow: 0px 20px 20px -10px rgba(black,.5)
+  overflow: hidden
+.top
+  +size(40%, 30px)
+  position: absolute
+  top: 0
+  left: 50%
+  transform: translateX(-50%)
+  border-radius: 0 0 10px 10px
+  background-color: #333
+  & .microphone
+    +size(40%, 8px)
+    border-radius: 5px
+    position: absolute
+    top: 50%
+    left: 20%
+    transform: translateY(-50%)
+    background-color: #111
+  & .camera
+    +size(15px, 15px)
+    position: absolute
+    border-radius: 100%
+    top: 50%
+    left: 70%
+    transform: translateY(-50%)
+    background-color: #111
+.home-bar
+  +size(55%, 8px)
+  position: absolute
+  bottom: 5px
+  left: 50%
+  transform: translateX(-50%)
+  border-radius: 4px
+  background-color: black
+.screen
+  +size(100%, 100%)
+  left: -1px
+  background-color: $color-white
+  & .nav-bar
+    +size(100%, 90px)
+    position: absolute
+    top: 0
+    left: 0
+    background-color: $color-white
+    color: $color-dark-green
+    & .home, #cart, #follow
+      +size(70px, 70px)
+      position: absolute
+      cursor: pointer
+      user-select: none
+      & i
+        font-size: 20pt
+        margin: 20px
+    & .home
+        left: 0
+        top: 20px
+    & #cart
+        right: 70px
+        top: 20px
+        & .num-cart
+            +size(25px, 25px)
+            position: absolute
+            bottom: 5px
+            right: 5px
+            border-radius: 100%
+            padding-top: 5px
+            box-sizing: border-box
+            text-align: center
+            font-size: 10pt
+            font-weight: bold
+            background-color: $color-light-green
+            color: $color-dark-green
+            transform: scale(1)
+    & #follow
+        right: 0
+        top: 20px
+.page-frame
+  +size(100%, 100%)
+  white-space: nowrap
+  font-size: 0px
+  left: 0
+  .page
+    +size(100%, calc(100% - 150px))
+    background-color: $color-white
+    display: inline-block
+    box-sizing: border-box
+    font-size: 12pt
+    padding: 0 20px
+    margin-top: 110px
+    padding-bottom: 100px
+    overflow-x: hidden
+    overflow-y: scroll
+    &::-webkit-scrollbar
+      width: 3px
+    & h2, ul
+      margin: 0
+      padding: 0
+      color: $color-dark-green
+    & ul
+      margin-top: 20px
+    & li
+      list-style: none
+      border-bottom: solid 1px #ccc
+      padding: 20px 10px
+      color: $color-dark-green
+      & input
+        position: absolute
+        top: 15px
+        right: 140px
+        width: 50px
+        height: 30px
+        font-size: 14pt
+        text-align: center
+      & .price
+        position: absolute
+        top: 20px
+        right: 40px
+        text-align: right
+        &::before
+          content:"NT$"
+      & .btn-del, .btn-fdel
+        position: absolute
+        right: 0
+        top: 20px
+        width: 20px
+        height: 20px
+        background-color: $color-light-green
+        color: $color-white
+        text-align: center
+        padding-top: 2px
+        box-sizing: border-box
+        cursor: pointer
+        user-select: none
+      & .btn-confirm
+          display: inline-block
+          left: 50%
+          transform: translateX(-50%)
+          padding: 10px 30px
+          background-color: $color-light-green
+          color: $color-dark-green
+          border-radius: 20px
+          cursor: pointer
+          user-select: none
+          &:hover
+            background-color: $color-dark-green
+            color: $color-light-green
+    & .total
+        font-weight: bold
+        background-color: rgba($color-light-green, .2)
+      
+.item-list
+  +size(100%, 100%)
+  display: inline-block
+  white-space: normal
+  margin-left: 15px
+  & .item
+    width: 160px
+    display: inline-block
+    margin-right: 10px
+    margin-bottom: 10px
+    background-color: white
+    border: solid 1px #ddd
+    border-radius: 5px
+    box-shadow: 0px 10px 10px -10px rgba(black,.1)
+    & .pic-prod
+      +size(100%, 150px)
+      overflow: hidden
+    & .name
+      display: block
+      width: 100%
+      white-space: normal
+      word-wrap: break-all
+      box-sizing: border-box
+      font-size: 12pt
+      font-weight: 700
+      padding: 5px 10px
+      margin: 0
+      color: $color-dark-green
+    & .price
+      margin: 0
+      padding: 10px
+      font-size: 14pt
+      color: $color-light-green
+      &::before
+        content:"NT$"
+    & .btn-list
+      width: 100%
+      font-size: 0px
+      border-radius: 0 0 5px 5px
+      overflow: hidden
+      & .add-cart, .add-follow
+        +size(50%, 50px)
+        display: inline-block
+        font-size: 16pt
+        text-align: center
+        padding-top: 15px
+        box-sizing: border-box
+        background-color: $color-light-green
+        color: $color-white
+        cursor: pointer
+        user-select: none
+        transition-duration: .2s
+        &:hover
+          background-color: $color-dark-green
+          color: $color-light-green
+      & .cart-full, .cart-full:hover
+        background-color: #eee
+        color: #ccc
+        cursor: default
+      & .followed, .followed:hover
+        color: $color-pink
+        
+          
